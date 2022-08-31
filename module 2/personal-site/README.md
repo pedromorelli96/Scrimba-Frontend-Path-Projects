@@ -1,20 +1,9 @@
-# module 1 - mywebapp
-# co5bc41e3bea3e1336ee72cdc
+# module 2 / personal-site
 
-Quick start:
+### Check it out here (deployed on netlify): https://fanciful-marigold-f1f390.netlify.app/
+<br /> 
 
-```
-$ yarn # npm install
-$ yarn build # npm run build
-````
-
-## Development
-
-Run Webpack in watch-mode to continually compile the JavaScript as you work:
-
-```
-$ yarn watch # npm run watch
-```
+# co9394c378902589eb08aedb2
 
 ## About Scrimba
 
