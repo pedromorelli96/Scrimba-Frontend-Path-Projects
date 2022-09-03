@@ -1,0 +1,115 @@
+/**
+Palette: https://coolors.co/palette/03045e-0077b6-00b4d8-90e0ef-caf0f8
+DARK BLUE: #03045E
+SEMI DARK BLUE: #0077B6
+BLUE: #00B4D8
+LIGHT BLUE: #90E0EF
+BABY BLUE: #CAF0F8
+
+*/
+
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.hero-div {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    background-image: url("images/campinas-hero.jpg");
+    background-size: 100% 100%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 0 3px black;
+    margin: 0;
+}
+
+#hero-h1 {
+    background-color: #03045E;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 40px;
+}
+
+#hero-h2 {
+    background-color: #00B4D8;
+    width: 600px;
+    padding: 5px 30px;
+    border-radius: 15px;
+}
+
+.activities-div {
+    height: 500px;
+    background-color: #CAF0F8;
+    display: flex;
+    flex-direction: column;
+    color: #1D3557;
+}
+
+#activities-h3 {
+    font-size: 20px;
+}
+
+#activities-imgs {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.activity-div {
+    width: 400px;
+    font-size: 20px;
+    transition: 0.5s;
+    margin-bottom: 0px;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.activity-div:hover {
+    background-color: #0077B6;
+    color: white;
+}
+
+.activity-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.activity-header {
+    margin: 40px 0 30px 0;
+    height: 30px;
+}
+
+.guide-div {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    height: 300px;
+    align-items: center;    
+    background-color: #90E0EF;
+    padding: 5px 20px;
+    margin: 80px auto 20px;
+    border-radius: 10px;
+    border-bottom: 5px solid #03045E;
+
+}
+
+.avatar {
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+
+#guide-text {
+    width: 200px;
+    margin: 0 auto;
+    padding: 20px 0px 60px 10px;
+}
+
+#guide-p {
+    font-style: italic;
+}
