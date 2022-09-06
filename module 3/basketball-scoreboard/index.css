@@ -21,6 +21,12 @@ p {
     padding: 0 15px;
 }
 
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    text-shadow: 2px 2px 1px black;
+}
+
 h3 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
