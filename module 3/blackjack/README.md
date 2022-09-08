@@ -1,6 +1,6 @@
 # module 3 / blackjack
 
-### Check it out here (deployed on netlify): <to be deployed/>
+### Check it out here (deployed on netlify): https://unique-longma-b4832c.netlify.app/
 <br />
 
 # co2224763a1e51e908596d470
