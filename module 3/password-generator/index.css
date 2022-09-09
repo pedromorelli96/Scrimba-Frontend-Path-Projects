@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #1F2937;
+    color: white;
+    max-width: 800px;
+}
+
+#container {
+    margin: 115px 50px;
+}
+
+h1 {
+    font-family: 'Karla', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.highlight {
+    color: #4ADF86;
+}
+
+.sup-text {
+    color: #D5D4D8;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.range-selector {
+    display: flex;
+    margin-top: 20px;
+}
+
+.checkbox-selector {
+    display: flex;
+    align-items: center;
+}
+
+#symbols-toggle {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+#numbers-toggle {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.p-size {
+    color: #D5D4D8;
+    margin-right: 50px;
+    font-size: 18px;
+}
+
+#gen-btn {
+    background: #10B981;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 4px #047857;
+    margin-top: 50px;
+}
+
+#gen-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px #064E3B;
+}
+
+hr {
+    border: 1px solid #2F3E53;
+    margin-top: 35px;
+}
+
+#passwords {
+    display: flex;
+    justify-content: space-between;
+}
+
+#password-size {
+    width: 300px;
+}
+
+.password-p {
+    background: #273549;
+    border-radius: 6px;
+    margin-top: 35px;
+    width: 240px;
+    word-break: break-all;
+    height: 80px;
+    text-align: center;
+    color: #55F991;
+    font-weight: 500;
+    line-height: 40px;
+    padding: 5px 15px;
+}
+
+#password1 {
+    margin-right: 25px;
+}
