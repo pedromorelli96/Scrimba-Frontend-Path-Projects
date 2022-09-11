@@ -1,8 +1,5 @@
 # module 3 / chrome-extension
 
-### Check it out here (deployed on netlify): <to be deployed />
-<br />
-
 # coe7c4a7092540b4a67791a8b
 
 ## About Scrimba
