@@ -1,10 +1,3 @@
-/* 
-Challenge:
-1. Refactor the CSS to make it DRYer
-   by grouping selectors together where
-   possible.
-*/
-
 body{
     font-size: 16px;
     color: #2b283a;
@@ -14,10 +7,13 @@ body{
 
 /* typography */
 
+h1, h3{
+    margin: 0;
+}
+
 h1{
     color: whitesmoke;
     font-size: 36px;
-    margin: 0;
 }
 
 h2{
@@ -27,7 +23,10 @@ h2{
 h3{
     color: #d0aaff;
     font-size: 20px;
-    margin:0;
+}
+
+p{
+    line-height: 23px;
 }
 
 /* links */
@@ -37,28 +36,60 @@ a{
     text-decoration: underline dotted; 
 }
 
-a:hover{
+a:hover, a:active{
     color: #d4b44c;
 }
 
-a:active{
-    color: #d4b44c;
+/* 
+Challenge:
+1. Refactor the CSS for these button-style
+   links using two classes on each link
+   element.
+⚠️ Think what to call the new class you
+   will need to create.
+*/
+
+.btn{
+    padding: 10px 19px;
+    border-radius: 4.6px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-dark{
+    background: #5f29a3;
+    color: whitesmoke
+}
+
+.btn-mid{
+    background: #F0E0FF; 
+    color: #5f29a3; 
+}
+
+.btn-light{
+    background: whitesmoke;
+    color: #5f29a3; 
+}
+ 
+.btn:hover, 
+.btn:active{
+    background-color: #f3e885;
+    color: #2b238a;
 }
 
 /* layout */
 
-header{
-    background-color: #5f29a3;
+header, section, footer{
     padding: 45px 0;
 }
 
-section{
-    padding: 45px 0;
+header, .section-two{
+    background-color: #5f29a3;
 }
 
 .section-two{
     color: whitesmoke;
-    background-color: #5f29a3;
 }
 
 .container{
@@ -82,14 +113,5 @@ section{
 
 footer{
     text-align: center;
-    padding: 45px 0;
     color: #5f29a3;
 }
-
-
-
-
-
-
-
-
