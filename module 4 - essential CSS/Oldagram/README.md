@@ -1,6 +1,6 @@
 # module 4 - essential CSS / Oldagram (SOLO PROJECT)
 
-### Check it out here (deployed on netlify): <to be deployed>
+### Check it out here (deployed on netlify): https://superlative-boba-13c7bf.netlify.app/
 
 <br />
 
