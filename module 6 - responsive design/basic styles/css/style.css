@@ -17,7 +17,7 @@ h1 span {
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 1.5rem;
 }
 
 p {
@@ -40,13 +40,11 @@ img {
 .columns {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
     margin: 1em 0;
-    border: 5px solid steelblue;
 }
 
-.col {
-    /* border: 2px solid magenta; */
+@media (max-width: 600px) {
+    
 }
 
 .col-1 {
@@ -59,6 +57,14 @@ img {
 
 .col-3 {
     width: 70%;    
+}
+
+@media (max-width: 600px) {
+    .col-1,
+    .col-2,
+    .col-3 {
+        width: 100%;
+    }
 }
 
 .col-bg {
