@@ -1,6 +1,6 @@
 # module 6 - responsive design / simple life page
 
-### Check it out here (deployed on netlify): <to be deployed>
+### Check it out here (deployed on netlify): https://gentle-pavlova-6b2c62.netlify.app/
 
 <br />
 
