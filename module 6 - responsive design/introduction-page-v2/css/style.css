@@ -1,0 +1,190 @@
+html {
+    font-size: .9rem;
+}
+
+body {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    /* font-size: 1.75rem; */
+}
+
+.container {
+    max-width: 570px;
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+h1,
+h2 {
+    font-weight: 300; 
+}
+
+h1 {
+    font-size: 3.75rem;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 2.625rem;
+    margin-top: 0;
+    border-top: solid 1px #c4c4c4;
+    border-bottom: solid 1px #c4c4c4;
+    /* 2.625 x 16 = 42 */
+    /* 20 / 42 */
+    padding: .5em 0;
+    margin-bottom: .5em;
+}
+
+h3 {
+    font-size: 2.25rem;
+    font-weight: 900;
+    margin-bottom: 0;
+}
+
+.accent-text {
+    display: block;
+}
+
+h1 .accent-text {
+    font-size: 5rem;
+}
+
+h2 .accent-text {
+    font-size: 3.75rem;
+}
+
+.accent-text,
+.name,
+time {
+    font-weight: 900;
+    color: #99D930;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+a {
+    color: #99D930;
+    font-weight: 900;
+}
+
+a:hover,
+a:focus {
+    color: #131313;
+}
+
+.small-text {
+    font-size: 1rem;
+    margin-top: .3125em;
+} 
+
+img {
+    max-width: 100%;
+}
+
+header,
+section {
+    padding: 3.25em 0;
+}
+
+header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.inverse {
+    color: #fff;
+    background: #252525;
+}
+
+.inverse .btn:hover,
+.inverse .btn:focus {
+    background: #fff;
+    color: #252525;
+}
+
+.btn {
+    display: inline-block;
+    color: #252525;
+    text-decoration: none;
+    background: #99D930;
+    padding: .625em 1.5625em;
+    margin-top: 1.5625em;
+}
+
+.btn:hover,
+.btn:focus {
+    background: #252525;
+    color: #fff;
+}
+
+@media (min-width: 600px) {
+    html {
+        /* font-size: 1.3125rem; */
+    }
+}
+
+@media (min-width: 750px) {
+    .splitter {
+        display: flex;
+        align-items: center;
+    }
+    
+    /* section {
+        background: lightblue;
+    } */
+    
+    .articles.inverse {
+        background: #99D930;
+        color: #252525;
+    }
+    
+    .articles.inverse .accent-text,
+    .articles.inverse .name,
+    .articles.inverse time,
+    .articles.inverse a {
+        color: currentColor;
+    }
+    
+    .articles.inverse a:hover,
+    .articles.inverse a:focus {
+        color: #fff;
+    }
+    
+    .articles.inverse .btn {
+        color: #fff;
+        background-color: #252525;
+    }
+    
+    .articles.inverse .btn:hover {
+        color: #252525;
+        background-color: #FFF;
+    }
+    
+    .articles.inverse h2 {
+        border-color: currentColor;
+    }
+    
+    .portfolio {
+        background: #252525;
+        color: #fff;
+        min-
+    }
+    
+    .portfolio .container {
+        max-width: 1200px;
+    }
+    
+    .work {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .portfolio-item {
+        width: 28%;
+    }
+}
