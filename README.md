@@ -6,9 +6,9 @@ The goal of this repository is to contain the files of all projects that I did o
 
 <br/>
 
-> #### Linkedin: [https://www.linkedin.com/in/pedro-morelli/](pedromorelli96@gmail.com)
+> #### Linkedin: <a href="https://www.linkedin.com/in/pedro-morelli/" target="_blank">https://www.linkedin.com/in/pedro-morelli/</a>
 >
-> #### Email: [pedromorelli96@gmail.com](pedromorelli96@gmail.com)
+> #### Email: <a href="pedromorelli96@gmail.com" target="_blank">pedromorelli96@gmail.com</a>
 
 <br/>
 
