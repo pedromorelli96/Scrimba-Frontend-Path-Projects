@@ -1,6 +1,6 @@
 # module 6 - responsive design / BBQ splash page
 
-### Check it out here (deployed on netlify): <to be deployed />
+### Check it out here (deployed on netlify): https://spectacular-druid-ae8979.netlify.app/
 
 <br />
 
