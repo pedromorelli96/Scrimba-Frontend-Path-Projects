@@ -68,6 +68,17 @@ header{
     padding: 4px 8px;
 }
 
+.radio:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.radio:last-child{
+    border-bottom: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
 label{
     font-size: 14px;
     padding: 3px;
@@ -79,10 +90,7 @@ label{
     background-color: #fff0ee;
     color: #bd301d;
     font-weight: bold;
-}
-
-.radio:last-child{
-    border-bottom: 0;
+    accent-color: #bd301d;
 }
 
 input[type="radio"]{
