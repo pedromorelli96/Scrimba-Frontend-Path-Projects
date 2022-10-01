@@ -1,6 +1,10 @@
-# module 5 v2 - essential Javascript / Twimba - a Twitter Clone
+# module 5 v2 - essential Javascript / Twimba - a Twitter clone
 
-# co3ba42cfba3094334726d606
+### Check it out here (deployed on netlify): https://sprightly-griffin-24d273.netlify.app/
+
+<br />
+
+# cob8049429023bc6b69a46bae
 
 ## About Scrimba
 
