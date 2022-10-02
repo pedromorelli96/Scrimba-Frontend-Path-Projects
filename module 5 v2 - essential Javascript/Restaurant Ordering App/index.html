@@ -5,8 +5,47 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
         />
         <link rel="stylesheet" href="index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
-        <script src="index.js"></script>
+        <header>
+            <h1>Jimmy's Diner</h1>
+            <h2>The best burgers and pizzas in town.</h2>
+        </header>
+        <main>
+            <!-- check later if menu list id is even used -->
+            <div class="menu-list" id="menu-list">
+                <!-- menu items go here -->
+            </div>
+            <!-- check later if order list id is even used -->
+            <div class="order-list" id="order-list">
+                <!-- order items go here -->
+                <div class="order-list-inner">
+                    <p class="order-list-title">Your order</p>
+                    <div class="order-list-item">
+                        <div class="order-list-item-data">
+                            <p class="order-list-item-name">Pizza</p>
+                            <p class="order-list-remove-btn">remove</p>
+                        </div>
+                        <p class="order-list-item-price">$ 14</p>
+                    </div>
+                </div>
+                <div class="order-list-footer">
+                    <p class="order-list-footer-total">Total price:</p>
+                    <p class="order-list-footer-price">$ 14</p>
+                </div>
+                <button class="complete-order-btn">Complete order</button>
+            </div>
+        </main>
+        <script src="index.js" type="module"></script>
     </body>
 </html>
