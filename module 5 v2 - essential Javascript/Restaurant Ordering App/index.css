@@ -7,7 +7,9 @@ body {
     /* background-color: black; */
 }
 
-/* typography and icons */
+/* =======================
+    typography and icons 
+======================= */
 header {
     color: white;
 }
@@ -52,11 +54,16 @@ h2 {
     text-align: center;
 }
 
+.order-list-item * {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+}
+
 .order-list-remove-btn {
     cursor: pointer;
     color: #bbbbbb;
-    letter-spacing: 1px;
-    font-size: 1rem;
+    font-size: 0.75rem;
+    font-family: "Verdana", "sans-serif";
 }
 
 .order-list-remove-btn:hover {
@@ -64,7 +71,9 @@ h2 {
     color: gray;
 }
 
-/* layout */
+/* ======================= 
+        layout 
+======================= */
 main,
 header {
     width: 600px;
@@ -141,7 +150,9 @@ h1 {
     border-top: 2px solid #393333;
 }
 
-/* menu item button */
+/* ======================= 
+    menu item button 
+======================= */
 .menu-item-button {
     background-color: white;
     border: 1.5px solid #dedede;
@@ -165,7 +176,9 @@ h1 {
     background-color: #16db99;
 }
 
-/* order button */
+/* ======================= 
+    order button
+======================= */
 .complete-order-btn {
     width: 100%;
     background-color: #16db99;
@@ -177,6 +190,7 @@ h1 {
     font-family: "Verdana", "sans-serif";
     font-weight: 700;
     border-radius: 3px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     transform: scale(1);
     transition: transform 250ms;
@@ -187,19 +201,9 @@ h1 {
     transform: scale(1.1);
 }
 
-/* .btn-primary {
-    background-image: linear-gradient(to left, #ff713b, #ffa51d);
-    color: white;
-    transform: scale(1);
-    transition: transform 250ms;
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-    transform: scale(1.1);
-} */
-
-/* utility */
+/* ======================= 
+        utility
+======================= */
 .hidden {
     display: none;
 }

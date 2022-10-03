@@ -23,8 +23,7 @@ function handleMenuItemClick(menuItemId) {
 }
 
 function handleRemoveItemClick(menuItemId) {
-    // .filter method does not work because multiple
-    // items have the same id property
+    // .filter method does not work because multiple items have the same id property
     order.splice(
         order.findIndex(function (e) {
             return e.id === menuItemId;
