@@ -30,8 +30,45 @@
             <div class="order-list" id="order-list">
                 <!-- order items go here -->
             </div>
+            <div class="order-message" id="order-message">
+                <!-- order message go here -->
+            </div>
         </main>
         <!-- modal goes here -->
+        <div class="modal" id="modal">
+            <div class="modal-inner" id="modal-inner">
+                <p class="modal-title">Enter card details</p>
+                <form id="card-form">
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    />
+                    <input
+                        type="tel"
+                        name="cardNumber"
+                        placeholder="Enter card number"
+                        required
+                    />
+                    <input
+                        type="password"
+                        name="cvv"
+                        placeholder="Enter CVV"
+                        required
+                    />
+                    <div class="modal-btn" id="modal-btn">
+                        <button
+                            type="submit"
+                            class="modal-pay-btn"
+                            id="modal-pay-btn"
+                        >
+                            Pay
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <script src="index.js" type="module"></script>
     </body>

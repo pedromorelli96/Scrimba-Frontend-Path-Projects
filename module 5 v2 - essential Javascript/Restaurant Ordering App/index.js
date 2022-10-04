@@ -1,6 +1,10 @@
 import { menuArray } from "./data.js";
 
+const cardForm = document.getElementById("card-form");
+const modal = document.getElementById("modal");
+
 let order = [];
+let username = "";
 
 document.addEventListener("click", function (e) {
     if (e.target.dataset.item) {
@@ -8,8 +12,16 @@ document.addEventListener("click", function (e) {
     } else if (e.target.dataset.removeitem) {
         handleRemoveItemClick(Number(e.target.dataset.removeitem));
     } else if (e.target.id === "complete-order-btn") {
-        console.log(e.target.id);
+        handleCompleteOrderBtnClick();
     }
+});
+
+cardForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const cardFormData = new FormData(cardForm);
+
+    handlePayBtnClick(cardFormData.get("name"));
 });
 
 function handleMenuItemClick(menuItemId) {
@@ -31,6 +43,18 @@ function handleRemoveItemClick(menuItemId) {
         1 // this means we remove only the first element that matches the id property
     );
 
+    render();
+}
+
+function handleCompleteOrderBtnClick() {
+    modal.style.display = "inline";
+}
+
+function handlePayBtnClick(name) {
+    modal.style.display = "none";
+    order = [];
+    username = name;
+    document.getElementById("order-list").style.display = "none";
     render();
 }
 
@@ -107,9 +131,24 @@ function generateOrderList() {
     }
 }
 
+function generateOrderMessage() {
+    let orderMessageHtml = ``;
+
+    if (username) {
+        orderMessageHtml += `
+            <p>
+                Thanks, ${username}! Your order is on its way!
+            </p>
+        `;
+    }
+
+    return orderMessageHtml;
+}
+
 function render() {
     document.getElementById("menu-list").innerHTML = generateMenuItems();
     document.getElementById("order-list").innerHTML = generateOrderList();
+    document.getElementById("order-message").innerHTML = generateOrderMessage();
 }
 
 render();

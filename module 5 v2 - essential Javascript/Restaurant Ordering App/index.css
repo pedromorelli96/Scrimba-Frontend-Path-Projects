@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     margin: 0;
@@ -69,6 +73,22 @@ h2 {
 .order-list-remove-btn:hover {
     text-decoration: underline;
     color: gray;
+}
+
+.modal {
+    font-family: "Verdana", "sans-serif";
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+form input,
+.modal-pay-btn {
+    font-size: 1rem;
 }
 
 /* ======================= 
@@ -150,6 +170,35 @@ h1 {
     border-top: 2px solid #393333;
 }
 
+.modal {
+    display: none;
+    padding: 2em 1.5em;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 450px;
+    width: 520px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 1px #666;
+    background-color: white;
+    filter: drop-shadow(1px 1px 255px rgba(0, 0, 0, 0.5));
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+form input {
+    padding: 1em 1.5em;
+    border-radius: 4px;
+    border: 1px solid #757575;
+}
+
 /* ======================= 
     menu item button 
 ======================= */
@@ -199,6 +248,41 @@ h1 {
 .complete-order-btn:hover,
 .complete-order-btn:focus {
     transform: scale(1.1);
+}
+
+/* ======================= 
+    modal pay button
+======================= */
+.modal-pay-btn {
+    width: 100%;
+    margin-top: 2em;
+    background-color: #16db99;
+    border: none;
+    text-align: center;
+    padding: 1.125em 0;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 3px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+/* ======================= 
+    order message
+======================= */
+.order-message {
+    padding: 0em 3.125em 1em 3.125em;
+    text-align: center;
+}
+
+.order-message p {
+    margin: 0;
+    background: #ecfdf5;
+    color: #065f46;
+    border-radius: 5px;
+    font-size: 2rem;
+    padding: 1em 0;
 }
 
 /* ======================= 
