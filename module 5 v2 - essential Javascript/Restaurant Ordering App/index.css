@@ -53,7 +53,8 @@ h2 {
     font-size: 1.25rem;
 }
 
-.order-list-title {
+.order-list-title,
+.order-rating-text {
     font-size: 1.75rem;
     text-align: center;
 }
@@ -286,8 +287,65 @@ form input {
 }
 
 /* ======================= 
+        stars rating 
+        source: https://codepen.io/hesguru/pen/BaybqXv
+======================= */
+.order-rating {
+    display: none;
+}
+
+.rate {
+    /* float: center;
+    height: 46px;
+    padding: 0 10px; */
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+.rate:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+}
+
+.rate:not(:checked) > label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 3rem;
+    color: #ccc;
+}
+
+.rate:not(:checked) > label:before {
+    content: "★ ";
+}
+
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+/* ======================= 
         utility
 ======================= */
 .hidden {
     display: none;
+}
+
+.discount {
+    color: #e11d48;
 }

@@ -21,3 +21,7 @@ export const menuArray = [
         id: 2,
     },
 ];
+
+export const foodList = ["Pizza", "Hamburger"];
+
+export const beverageList = ["Beer"];

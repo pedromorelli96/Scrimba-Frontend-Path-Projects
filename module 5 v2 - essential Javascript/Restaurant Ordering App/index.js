@@ -1,10 +1,11 @@
-import { menuArray } from "./data.js";
+import { menuArray, foodList, beverageList } from "./data.js";
 
 const cardForm = document.getElementById("card-form");
 const modal = document.getElementById("modal");
 
 let order = [];
 let username = "";
+const orderDiscount = 0.9; // 10% discount
 
 document.addEventListener("click", function (e) {
     if (e.target.dataset.item) {
@@ -61,7 +62,7 @@ function handlePayBtnClick(name) {
 function generateMenuItems() {
     let menuHtml = ``;
 
-    menuArray.forEach(function (menuItem, index) {
+    menuArray.forEach(function (menuItem) {
         menuHtml += `
             <div class="menu-item">
                 <div class="menu-item-inner">
@@ -92,15 +93,31 @@ function generateMenuItems() {
     return menuHtml;
 }
 
+function hasMealDiscount() {
+    let hasFood = false;
+    let hasBeverage = false;
+
+    order.forEach(function (orderItem) {
+        if (beverageList.includes(orderItem.name)) {
+            hasBeverage = true;
+        } else if (foodList.includes(orderItem.name)) {
+            hasFood = true;
+        }
+    });
+
+    return hasFood && hasBeverage;
+}
+
 function generateOrderList() {
     let orderHtml = ``;
     let orderItemsHtml = ``;
+    let totalPriceHtml = ``;
     let orderTotal = 0;
 
     if (order.length === 0) {
         return orderHtml;
     } else {
-        order.forEach(function (orderItem, index) {
+        order.forEach(function (orderItem) {
             orderTotal += orderItem.price;
             orderItemsHtml += `
                 <div class="order-list-item">
@@ -113,6 +130,21 @@ function generateOrderList() {
             `;
         });
 
+        if (!hasMealDiscount()) {
+            totalPriceHtml += `
+                <p class="order-list-footer-price">$ ${orderTotal}</p>
+            `;
+        } else {
+            totalPriceHtml += `
+                <p class="order-list-footer-price discount">$ 
+                    ${(orderTotal * orderDiscount).toFixed(2)} 
+                    <span class="discount">
+                        (10% discount!)
+                    </span>
+                </p>
+            `;
+        }
+
         orderHtml = `
             <div class="order-list-inner">
                 <p class="order-list-title">Your order</p>
@@ -120,7 +152,7 @@ function generateOrderList() {
             </div>
             <div class="order-list-footer">
                 <p class="order-list-footer-total">Total price:</p>
-                <p class="order-list-footer-price">$ ${orderTotal}</p>
+                ${totalPriceHtml}
             </div>
             <button class="complete-order-btn" id="complete-order-btn">
                 Complete order
@@ -140,6 +172,7 @@ function generateOrderMessage() {
                 Thanks, ${username}! Your order is on its way!
             </p>
         `;
+        document.getElementById("order-rating").style.display = "block";
     }
 
     return orderMessageHtml;
