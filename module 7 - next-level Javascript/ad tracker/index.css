@@ -1,0 +1,48 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    background-image: linear-gradient(midnightblue, skyblue);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+.container{
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card{
+    width: 200px;
+    border: 3px solid navy;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 1px 1px 1px #666;
+}
+
+.site-name{
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.highlight{
+    color: red;
+    font-weight: 800;
+}
