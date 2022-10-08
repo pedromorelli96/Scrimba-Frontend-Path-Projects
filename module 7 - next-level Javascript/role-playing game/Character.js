@@ -1,40 +1,48 @@
-import { getDiceRollArray, getDicePlaceholderHtml, getPercentage } from './utils.js'
+import {
+    getDiceRollArray,
+    getDicePlaceholderHtml,
+    getPercentage,
+} from "./utils.js";
 
-function Character(data) {
-    Object.assign(this, data)
-    this.maxHealth = this.health
-
-    this.diceHtml = getDicePlaceholderHtml(this.diceCount)
-
-    this.setDiceHtml = function() {
-        this.currentDiceScore = getDiceRollArray(this.diceCount)
-        this.diceHtml = this.currentDiceScore.map((num) =>
-            `<div class="dice">${num}</div>`).join("")
+class Character {
+    constructor(data) {
+        Object.assign(this, data);
+        this.maxHealth = this.health;
+        this.diceHtml = getDicePlaceholderHtml(this.diceCount);
     }
 
-    this.takeDamage = function (attackScoreArray) {
-        const totalAttackScore = attackScoreArray.reduce((total, num) => total + num)
-        this.health -= totalAttackScore
+    setDiceHtml() {
+        this.currentDiceScore = getDiceRollArray(this.diceCount);
+        this.diceHtml = this.currentDiceScore
+            .map((num) => `<div class="dice">${num}</div>`)
+            .join("");
+    }
+
+    takeDamage(attackScoreArray) {
+        const totalAttackScore = attackScoreArray.reduce(
+            (total, num) => total + num
+        );
+        this.health -= totalAttackScore;
         if (this.health <= 0) {
-            this.dead = true
-            this.health = 0
+            this.dead = true;
+            this.health = 0;
         }
     }
 
-
-    this.getHealthBarHtml = function () {
-        const percent = getPercentage(this.health, this.maxHealth)
+    getHealthBarHtml() {
+        const percent = getPercentage(this.health, this.maxHealth);
         return `<div class="health-bar-outer">
-                    <div class="health-bar-inner ${percent < 26 ? "danger" : ""}" 
+                    <div class="health-bar-inner ${
+                        percent < 26 ? "danger" : ""
+                    }" 
                             style="width:${percent}%;">
                     </div>
-                </div>`  
+                </div>`;
     }
-    
 
-    this.getCharacterHtml = function () {
-        const { elementId, name, avatar, health, diceCount, diceHtml } = this
-        const healthBar = this.getHealthBarHtml()
+    getCharacterHtml() {
+        const { elementId, name, avatar, health, diceCount, diceHtml } = this;
+        const healthBar = this.getHealthBarHtml();
         return `
             <div class="character-card">
                 <h4 class="name"> ${name} </h4>
@@ -44,8 +52,8 @@ function Character(data) {
                 <div class="dice-container">
                     ${diceHtml}
                 </div>
-            </div>`
+            </div>`;
     }
 }
 
-export default Character
+export default Character;
