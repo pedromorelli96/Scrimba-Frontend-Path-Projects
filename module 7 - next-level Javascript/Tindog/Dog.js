@@ -8,6 +8,16 @@ class Dog {
         this.hasBeenSwiped = true;
     }
 
+    getBadgeHtml() {
+        const badgeSrc = this.hasBeenLiked
+            ? "images/badge-like.png"
+            : "images/badge-nope.png";
+
+        return `
+            <img class="badge-img" src="${badgeSrc}">
+        `;
+    }
+
     getDogHtml() {
         const { name, avatar, age, bio } = this;
         return `
@@ -19,6 +29,9 @@ class Dog {
                     </div>
                 </div>
                 <img class="dog-img" src="${avatar}">
+                <div class="badge" id="badge">
+                    ${this.getBadgeHtml()}
+                </div>
             </div>`;
     }
 }

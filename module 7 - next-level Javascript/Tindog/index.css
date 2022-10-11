@@ -93,3 +93,50 @@ header {
     background: #ffe7ef;
     box-shadow: 0px 10px 20px #edd9df;
 }
+
+#restart-button {
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 250ms;
+}
+
+#restart-button:hover,
+#restart-button:focus {
+    transform: scale(1.2);
+}
+
+.badge {
+    display: none;
+}
+
+.badge-img {
+    position: absolute;
+    top: 4rem;
+    left: 1.5rem;
+    width: 50%;
+    transform: rotate(-30deg) scale(1.5);
+    animation: scaleDown 500ms ease-in-out forwards;
+}
+
+@keyframes scaleDown {
+    to {
+        transform: rotate(-30deg) scale(1);
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.no-dogs {
+    margin-top: 10rem;
+    text-align: center;
+}
+
+.no-dogs h1 {
+    font-size: 5rem;
+}
+
+.no-dogs p {
+    color: #8a8989;
+}
