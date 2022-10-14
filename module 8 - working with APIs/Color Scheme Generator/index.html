@@ -1,14 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="index.css" />
         <title>Color Scheme Generator</title>
     </head>
+
     <body>
+        <nav>
+            <div class="container">
+                <form class="color-selector form-flex">
+                    <div class="color-inputs">
+                        <input type="color" id="color-input" />
+                        <select name="mode-select" id="mode-select">
+                            <option value="monochrome">monochrome</option>
+                        </select>
+                    </div>
+                    <button type="submit">Get color scheme</button>
+                </form>
+            </div>
+        </nav>
+        <main class="container">
+            <div class="palette-container">
+                <div class="background-colors">
+                    <div id="background-color1">test</div>
+                    <div id="background-color2"></div>
+                    <div id="background-color3"></div>
+                    <div id="background-color4"></div>
+                    <div id="background-color5"></div>
+                </div>
+                <div class="colors-hex">
+                    <p id="color-hex1">#123456</p>
+                    <p id="color-hex2">#123456</p>
+                    <p id="color-hex3">#123456</p>
+                    <p id="color-hex4">#123456</p>
+                    <p id="color-hex5">#123456</p>
+                </div>
+            </div>
+        </main>
+
         <script src="index.js" type="module"></script>
     </body>
 </html>
