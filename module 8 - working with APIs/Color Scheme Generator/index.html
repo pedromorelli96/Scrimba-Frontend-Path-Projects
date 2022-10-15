@@ -24,9 +24,7 @@
                 <form class="color-selector form-flex">
                     <div class="color-inputs">
                         <input type="color" id="color-input" />
-                        <select name="mode-select" id="mode-select">
-                            <option value="monochrome">monochrome</option>
-                        </select>
+                        <select name="mode-select" id="mode-select"></select>
                     </div>
                     <button type="submit">Get color scheme</button>
                 </form>
@@ -34,20 +32,8 @@
         </nav>
         <main class="container">
             <div class="palette-container">
-                <div class="background-colors">
-                    <div id="background-color1">test</div>
-                    <div id="background-color2"></div>
-                    <div id="background-color3"></div>
-                    <div id="background-color4"></div>
-                    <div id="background-color5"></div>
-                </div>
-                <div class="colors-hex">
-                    <p id="color-hex1">#123456</p>
-                    <p id="color-hex2">#123456</p>
-                    <p id="color-hex3">#123456</p>
-                    <p id="color-hex4">#123456</p>
-                    <p id="color-hex5">#123456</p>
-                </div>
+                <div class="background-colors" id="background-colors"></div>
+                <div class="colors-hex" id="colors-hex"></div>
             </div>
         </main>
 

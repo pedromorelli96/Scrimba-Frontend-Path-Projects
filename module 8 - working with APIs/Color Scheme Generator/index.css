@@ -108,28 +108,8 @@ form > button {
     text-align: center;
 }
 
-#background-color1 {
-    background-color: black;
-}
-
-#background-color2 {
-    background-color: red;
-}
-
-#background-color3 {
-    background-color: green;
-}
-
-#background-color4 {
-    background-color: yellow;
-}
-
-#background-color5 {
-    background-color: pink;
-}
-
 /* ===============
-    Media Query
+Media Query
 ================== */
 @media (min-width: 550px) {
     .form-flex {
@@ -158,5 +138,22 @@ form > button {
 }
 
 /* ===============
-    Utils
+    Effects
 ================== */
+
+form > button:hover {
+    background-color: #dbffed;
+    box-shadow: 0px 5px 10px #ccf1e6;
+}
+
+form > button:active {
+    background-color: #dbffed;
+    box-shadow: 0px 5px 10px #ccf1e6;
+    transform: translateY(2px);
+}
+
+.background-colors > *:hover,
+.colors-hex > p:hover {
+    cursor: pointer;
+    border: 1px solid red;
+}
