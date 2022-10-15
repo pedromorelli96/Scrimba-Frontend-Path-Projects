@@ -97,6 +97,12 @@ form > button {
 .background-colors > * {
     width: 20%;
     height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 .colors-hex > * {
@@ -154,5 +160,8 @@ form > button:active {
 .background-colors > *:hover,
 .colors-hex > p:hover {
     cursor: pointer;
-    border: 1px solid red;
+}
+
+.colors-hex > p:hover {
+    text-decoration: underline;
 }

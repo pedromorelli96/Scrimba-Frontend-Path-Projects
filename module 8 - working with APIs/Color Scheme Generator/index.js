@@ -2,6 +2,7 @@ import { schemeModes } from "./api.js";
 
 let colorsArray = [];
 
+const colors = document.getElementById("colors");
 const colorInput = document.getElementById("color-input");
 const modeSelect = document.getElementById("mode-select");
 const backgroundColors = document.getElementById("background-colors");
@@ -41,10 +42,14 @@ function renderColorScheme() {
         backgroundColorsHtml += `
             <div
                 style="background-color:${colorHex}"
+                data-bgcolor="${colorHex}"
             ></div>
         `;
 
-        colorsHexHtml += `<p>${colorHex}</p>`;
+        colorsHexHtml += `
+            <p 
+                data-bgcolor="${colorHex}"
+            >${colorHex}</p>`;
     });
 
     backgroundColors.innerHTML = backgroundColorsHtml;
@@ -57,4 +62,21 @@ setModeOptions();
 document.addEventListener("submit", function (e) {
     e.preventDefault();
     getColorScheme();
+});
+
+colors.addEventListener("click", function (e) {
+    if (e.target.dataset.bgcolor) {
+        navigator.clipboard.writeText(e.target.dataset.bgcolor);
+        e.target.textContent = "Copied!";
+
+        if (e.target.parentElement.id === "background-colors") {
+            setTimeout(() => {
+                e.target.textContent = "";
+            }, 1000);
+        } else {
+            setTimeout(() => {
+                e.target.textContent = e.target.dataset.bgcolor;
+            }, 1000);
+        }
+    }
 });
