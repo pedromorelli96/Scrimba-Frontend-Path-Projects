@@ -96,7 +96,7 @@ form > button {
 
 .background-colors > * {
     width: 20%;
-    height: 90vh;
+    height: 80vh;
 }
 
 .colors-hex > * {
@@ -141,14 +141,13 @@ Media Query
     Effects
 ================== */
 
-form > button:hover {
+form > button:hover,
+form > button:active {
     background-color: #dbffed;
     box-shadow: 0px 5px 10px #ccf1e6;
 }
 
 form > button:active {
-    background-color: #dbffed;
-    box-shadow: 0px 5px 10px #ccf1e6;
     transform: translateY(2px);
 }
 
