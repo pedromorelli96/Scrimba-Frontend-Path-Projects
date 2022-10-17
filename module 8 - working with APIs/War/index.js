@@ -1,0 +1,1 @@
+fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
