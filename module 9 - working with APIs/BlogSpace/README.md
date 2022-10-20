@@ -1,6 +1,6 @@
-# module 8 - working with APIs / BoredBot
+# module 9 - working with APIs / BlogSpace
 
-# coa284fa5be0662dfea17d0d0
+# cob7249e79bff20a626c784f1
 
 ## About Scrimba
 
