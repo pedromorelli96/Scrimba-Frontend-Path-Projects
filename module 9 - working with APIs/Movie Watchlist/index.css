@@ -6,7 +6,10 @@ html,
 body {
     margin: 0;
     padding: 0;
+    font-family: "Inter", sans-serif;
     font-size: 1rem;
+    color: white;
+    background-color: #121212;
 }
 
 body {
@@ -24,6 +27,17 @@ img {
 /* ===============
     Layout
 ================== */
+.form-contents > img {
+    width: 1%;
+}
+
+.empty-movies > img {
+    width: 5%;
+}
+
+.movies-list img {
+    width: 5%;
+}
 
 /* ===============
     Media Query
