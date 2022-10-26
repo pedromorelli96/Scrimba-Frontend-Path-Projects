@@ -18,6 +18,92 @@
         <title>Movie Watchlist</title>
     </head>
     <body>
+        <div id="container">
+            <header id="header">
+                <div class="header-text">
+                    <h1>Find your film</h1>
+                    <p id="watchlist-nav">Search for Movies</p>
+                </div>
+            </header>
+            <div id="search-bar">
+                <form>
+                    <div class="form-contents">
+                        <img src="icons/search.svg" alt="search icon" />
+                        <input
+                            type="text"
+                            id="search-input"
+                            placeholder="Blade Runner"
+                        />
+                        <button type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
+            <main id="main">
+                <div class="empty-movies">
+                    <img src="icons/movie.svg" alt="movie icon" />
+                    <p class="empty-movies-text">Start exploring</p>
+                </div>
+                <div class="movies-list">
+                    <div class="movie-card">
+                        <div class="movie-img">
+                            <img
+                                src="images/image 33.png"
+                                alt="movie cover image"
+                            />
+                        </div>
+                        <div class="movie-info">
+                            <div class="movie-info-header">
+                                <p class="movie-title">Blade Runner</p>
+                                <p class="movie-rating">⭐ 8.1</p>
+                            </div>
+                            <div class="movie-info-stats">
+                                <p class="movie-duration">116 min</p>
+                                <p class="movie-tags">Drama, Mystery, Sci-fi</p>
+                                <div class="movie-add-to-watchlist">
+                                    <img src="icons/plus.svg" alt="plus icon" />
+                                    <p id="movie-add-btn">Watchlist</p>
+                                </div>
+                                <p class="movie-synopsis">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Beatae ea deserunt commodi
+                                    recusandae. Necessitatibus illum ratione
+                                    quae labore non incidunt.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="movie-card">
+                        <div class="movie-img">
+                            <img
+                                src="images/image 34.png"
+                                alt="movie cover image"
+                            />
+                        </div>
+                        <div class="movie-info">
+                            <div class="movie-info-header">
+                                <p class="movie-title">Blade Runner 2049</p>
+                                <p class="movie-rating">⭐ 8.0</p>
+                            </div>
+                            <div class="movie-info-stats">
+                                <p class="movie-duration">164 min</p>
+                                <p class="movie-tags">Action, Drama, Mystery</p>
+                                <div class="movie-add-to-watchlist">
+                                    <img src="icons/plus.svg" alt="plus icon" />
+                                    <p id="movie-add-btn">Watchlist</p>
+                                </div>
+                                <p class="movie-synopsis">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Beatae ea deserunt commodi
+                                    recusandae. Necessitatibus illum ratione
+                                    quae labore non incidunt.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
         <script src="index.js" type="module"></script>
     </body>
 </html>
