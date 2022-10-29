@@ -89,7 +89,7 @@ img {
     background-image: url(images/header-cover.jpg);
     background-color: #404040;
     background-size: cover;
-    background-position: center;
+    background-position-y: 15%;
     background-blend-mode: multiply;
 }
 
@@ -102,6 +102,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 3rem 1rem;
 }
 
 .form-contents > img {
@@ -112,8 +113,31 @@ img {
     width: 5%;
 }
 
-.movies-list img {
+.movie-add-to-watchlist > img {
     width: 5%;
+}
+
+.form-contents {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.empty-movies {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.movie-card {
+    display: flex;
+}
+
+.movie-info-header,
+.movie-info-stats {
+    display: flex;
+    align-items: center;
 }
 
 /* ===============
