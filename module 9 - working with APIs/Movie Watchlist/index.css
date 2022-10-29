@@ -23,10 +23,87 @@ img {
 /* ===============
     Typography
 ================== */
+.header-text > h1 {
+    font-weight: 800;
+    font-size: 2.6875rem;
+}
+
+.header-text > a {
+    color: white;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.header-text > a:hover {
+    text-decoration: underline;
+}
+
+#search-input {
+    color: #a5a5a5;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+#search-btn {
+    color: white;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.empty-movies-text {
+    color: #2e2e2f;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.movie-title {
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+.movie-rating,
+.movie-duration,
+.movie-tags,
+.movie-add-to-watchlist {
+    font-weight: 400;
+    font-size: 0.75rem;
+}
+
+.movie-synopsis {
+    color: #a5a5a5;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
 
 /* ===============
     Layout
 ================== */
+#container {
+    max-width: 550px;
+    margin: 0 auto;
+    border: 2px solid red;
+}
+
+#header {
+    background-image: url(images/header-cover.jpg);
+    background-color: #404040;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.inner-content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .form-contents > img {
     width: 1%;
 }
