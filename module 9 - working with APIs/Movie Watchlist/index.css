@@ -82,58 +82,136 @@ img {
 #container {
     max-width: 550px;
     margin: 0 auto;
+    height: inherit;
+    position: relative;
 }
 
+/* ===============
+    Header content
+================== */
 #header {
     background-image: url(images/header-cover.jpg);
     background-color: #404040;
     background-size: cover;
     background-position-y: 15%;
     background-blend-mode: multiply;
+    display: flex;
+    height: 25%;
 }
 
-.inner-content {
-    width: 90%;
-    margin: 0 auto;
+#main {
+    height: 75%;
 }
 
 .header-text {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3rem 1rem;
 }
 
-.form-contents > img {
-    width: 1%;
+.header-text > h1 {
+    cursor: default;
 }
 
-.empty-movies > img {
-    width: 5%;
-}
-
-.movie-add-to-watchlist > img {
-    width: 5%;
+/* ===============
+    Search Bar
+================== */
+#search-bar * {
+    margin: 0 auto;
 }
 
 .form-contents {
-    width: 90%;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    background-color: #2e2e2f;
+    border-radius: 6px;
+    height: 2.5rem;
 }
 
+#search-icon {
+    display: flex;
+}
+
+#search-icon > img {
+    filter: brightness(0.5);
+    width: 45%;
+    margin-left: 1em;
+    margin-right: 0.5em;
+}
+
+#search-input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+}
+
+#search-btn {
+    background: #4b4b4b;
+    border: none;
+    margin-left: auto;
+    border-radius: 0 6px 6px 0;
+    padding: 0 2em;
+    cursor: pointer;
+}
+
+/* ===============
+    Empty Movies
+================== */
+
 .empty-movies {
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#movie-icon {
+    width: 20%;
+    margin-bottom: 0.5em;
+}
+
+.empty-movies-text {
+    margin: 0;
+    cursor: default;
+}
+
+/* ===============
+    Movie Card
+================== */
+.movies-list {
+    padding-top: 3em;
 }
 
 .movie-card {
     display: flex;
     align-items: center;
+    padding: 1.5em 0;
     border-bottom: 1.5px solid #2c2c2c;
+}
+
+.movie-img {
+    width: 90%;
+    border-radius: 3px;
+    margin-right: 1.5em;
+}
+
+.movie-info * {
+    margin: 0;
+}
+
+.movie-info-header,
+.movie-properties {
     margin-bottom: 1em;
+}
+
+.movie-title,
+.plus-icon {
+    margin-right: 0.5em;
+}
+
+.movie-duration,
+.movie-tags {
+    margin-right: 1.5em;
 }
 
 .movie-info-header,
@@ -141,15 +219,10 @@ img {
 .movie-add-to-watchlist {
     display: flex;
     align-items: center;
-    gap: 1rem;
 }
 
-.movie-img {
-    width: 60%;
-}
-
-.movie-synopsis {
-    margin-bottom: 3em;
+.movie-add-to-watchlist > img {
+    width: 15%;
 }
 
 /* ===============
@@ -159,3 +232,28 @@ img {
 /* ===============
     Effects
 ================== */
+#search-bar {
+    position: absolute;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+#search-btn:hover,
+#search-btn:active {
+    background: #757575;
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+
+/* ===============
+    Utility
+================== */
+.inner-content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}

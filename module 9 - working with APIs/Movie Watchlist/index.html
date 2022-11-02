@@ -28,21 +28,28 @@
             <div id="search-bar">
                 <form>
                     <div class="form-contents inner-content">
-                        <img src="icons/search.svg" alt="search icon" />
+                        <label for="search-input" id="search-icon">
+                            <img src="icons/search.svg" alt="search icon" />
+                        </label>
                         <input
                             type="text"
                             id="search-input"
-                            placeholder="Blade Runner"
+                            placeholder="Enter the movie name here"
                         />
                         <button type="submit" id="search-btn">Search</button>
                     </div>
                 </form>
             </div>
             <main id="main">
-                <div class="empty-movies inner-content">
-                    <img src="icons/movie.svg" alt="movie icon" />
+                <!-- <div class="empty-movies inner-content">
+                    <img
+                        id="movie-icon"
+                        src="icons/movie.svg"
+                        alt="movie icon"
+                    />
                     <p class="empty-movies-text">Start exploring</p>
-                </div>
+                </div> -->
+
                 <div class="movies-list inner-content">
                     <div class="movie-card">
                         <div class="movie-img">
@@ -66,6 +73,7 @@
                                         <img
                                             src="icons/plus.svg"
                                             alt="plus icon"
+                                            class="plus-icon"
                                         />
                                         <p id="movie-add-btn">Watchlist</p>
                                     </div>
@@ -74,13 +82,22 @@
                                     Lorem ipsum dolor sit amet consectetur
                                     adipisicing elit. Beatae ea deserunt commodi
                                     recusandae. Necessitatibus illum ratione
-                                    quae labore non incidunt.
+                                    quae labore non incidunt. Lorem ipsum dolor
+                                    sit amet consectetur adipisicing elit.
+                                    Tenetur atque voluptatem molestias quo
+                                    excepturi rem cum animi dolorum non quam!
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Cupiditate, blanditiis
+                                    explicabo. Obcaecati voluptatum sint ex nisi
+                                    ipsum. Veniam, nostrum eveniet sed nemo
+                                    dolore distinctio mollitia perspiciatis
+                                    neque. Vel, placeat reiciendis.
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="movie-card">
+                    <!-- <div class="movie-card">
                         <div class="movie-img">
                             <img
                                 src="images/image 34.png"
@@ -114,7 +131,7 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </main>
         </div>
