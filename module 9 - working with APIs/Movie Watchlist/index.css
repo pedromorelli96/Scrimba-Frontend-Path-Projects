@@ -76,6 +76,12 @@ img {
     font-size: 0.875rem;
 }
 
+.empty-search-text {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #787878;
+}
+
 /* ===============
     Layout
 ================== */
@@ -156,7 +162,6 @@ img {
 /* ===============
     Empty Movies
 ================== */
-
 .empty-movies {
     display: flex;
     flex-direction: column;
@@ -173,6 +178,18 @@ img {
 .empty-movies-text {
     margin: 0;
     cursor: default;
+}
+
+/* ===============
+    Empty Search
+================== */
+.empty-search {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
 }
 
 /* ===============
