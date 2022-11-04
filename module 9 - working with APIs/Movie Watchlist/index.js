@@ -1,4 +1,5 @@
 const apiKey = "202089d";
+const moviesObjectArray = [];
 
 async function getMovies(title) {
     try {
@@ -17,6 +18,18 @@ async function getMovies(title) {
     }
 }
 
+function createMovieObject(id, movie) {
+    moviesObjectArray.push({
+        id: id,
+        title: movie.Title,
+        rating: movie.imdbRating,
+        runtime: movie.Runtime,
+        genre: movie.Genre,
+        plot: movie.Plot,
+        poster: movie.Poster,
+    });
+}
+
 async function getMovieInfo(movieIds) {
     try {
         for (const id of await movieIds) {
@@ -24,7 +37,7 @@ async function getMovieInfo(movieIds) {
                 `http://www.omdbapi.com/?apikey=${apiKey}&i=${id}&type=movie`
             );
             const data = await response.json();
-            console.log(data);
+            createMovieObject(id, data);
         }
     } catch (error) {
         console.error("Failed to get movie info from OMDb API");
@@ -33,6 +46,7 @@ async function getMovieInfo(movieIds) {
 }
 
 // getMovieInfo(getMovies("Blade Runner"));
+// console.log(moviesObjectArray);
 
 // {
 //     "Title":"Blade Runner",
