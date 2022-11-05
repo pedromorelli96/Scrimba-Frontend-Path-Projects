@@ -1,6 +1,26 @@
 const apiKey = "202089d";
 const moviesObjectArray = [];
 
+const moviesSynopsis = document.querySelectorAll(".movie-synopsis");
+
+function truncateMoviesSynopsis() {
+    for (const synopsis of moviesSynopsis) {
+        console.log(synopsis.textContent.length);
+        if (synopsis.textContent.length > 350) {
+            let truncated = synopsis.textContent.substring(0, 350);
+
+            synopsis.innerHTML = `
+                <p>
+                    ${truncated}...
+                    <span class="read-more">
+                        Read more
+                    </span>
+                </p>
+            `;
+        }
+    }
+}
+
 async function getMovies(title) {
     try {
         let movieIds = [];
