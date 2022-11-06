@@ -1,41 +1,38 @@
 const apiKey = "202089d";
-const moviesObjectArray = [];
+let moviesObjectArray = [];
 
+const searchInput = document.getElementById("search-input");
+const moviesList = document.getElementById("movies-list");
+const emptyMovies = document.getElementById("empty-movies");
+const emptySearch = document.getElementById("empty-search");
 const moviesSynopsis = document.querySelectorAll(".movie-synopsis");
 
-function truncateMoviesSynopsis() {
-    for (const synopsis of moviesSynopsis) {
-        console.log(synopsis.textContent.length);
-        if (synopsis.textContent.length > 350) {
-            let truncated = synopsis.textContent.substring(0, 350);
+document.addEventListener("submit", function (e) {
+    e.preventDefault();
+    moviesObjectArray = [];
+    emptyMovies.classList.add("hidden");
+    emptySearch.classList.add("hidden");
+    getMovieInfo(getMovieIds(searchInput.value));
+});
 
-            synopsis.innerHTML = `
-                <p>
-                    ${truncated}...
-                    <span class="read-more">
-                        Read more
-                    </span>
-                </p>
-            `;
-        }
-    }
-}
+function truncateMoviesSynopsis(synopsis) {
+    if (synopsis.length > 150) {
+        let truncated = synopsis.substring(0, 150);
 
-async function getMovies(title) {
-    try {
-        let movieIds = [];
-        const response = await fetch(
-            `http://www.omdbapi.com/?apikey=${apiKey}&s=${title}&type=movie`
-        );
-        const data = await response.json();
-        for (const movie of data.Search) {
-            movieIds.push(movie.imdbID);
-        }
-        return movieIds;
-    } catch (error) {
-        console.error("Failed to get movies data from OMDb API");
-        console.error(error);
+        return `
+            <p class="movie-synopsis">
+                ${truncated}...
+                <span class="read-more">
+                    Read more
+                </span>
+            </p>
+        `;
     }
+    return `
+        <p class="movie-synopsis">
+            ${synopsis}
+        </p>
+    `;
 }
 
 function createMovieObject(id, movie) {
@@ -47,7 +44,42 @@ function createMovieObject(id, movie) {
         genre: movie.Genre,
         plot: movie.Plot,
         poster: movie.Poster,
+        inWatchlist: false,
     });
+}
+
+function toggleMovieList() {
+    moviesList.classList.add("hidden");
+    emptySearch.classList.remove("hidden");
+}
+
+async function getMovieIds(title) {
+    try {
+        if (!title) {
+            toggleMovieList();
+
+            throw "empty search";
+        }
+
+        let movieIds = [];
+        const response = await fetch(
+            `http://www.omdbapi.com/?apikey=${apiKey}&s=${title}&type=movie`
+        );
+        const data = await response.json();
+        if (data.Response !== "False") {
+            for (const movie of data.Search) {
+                movieIds.push(movie.imdbID);
+            }
+            return movieIds;
+        } else {
+            toggleMovieList();
+
+            throw "no movie found";
+        }
+    } catch (error) {
+        console.error(error);
+        console.error("Failed to get movies data from OMDb API");
+    }
 }
 
 async function getMovieInfo(movieIds) {
@@ -59,14 +91,81 @@ async function getMovieInfo(movieIds) {
             const data = await response.json();
             createMovieObject(id, data);
         }
+        moviesList.classList.remove("hidden");
+        renderMovieList();
     } catch (error) {
-        console.error("Failed to get movie info from OMDb API");
         console.error(error);
+        console.error("Failed to get movie info from OMDb API");
     }
 }
 
-// getMovieInfo(getMovies("Blade Runner"));
-// console.log(moviesObjectArray);
+function renderMovieList() {
+    let moviesHmtl = ``;
+    let addOrRemoveHtml = ``;
+
+    moviesObjectArray.forEach((movie) => {
+        if (!movie.inWatchlist) {
+            addOrRemoveHtml = `
+                <div 
+                    class="movie-add-to-watchlist"
+                    data-movieid="${movie.id}"
+                >
+                    <img
+                        src="icons/plus.svg"
+                        alt="plus icon"
+                        class="plus-icon"
+                    />
+                    <p class="movie-add-btn">Watchlist</p>
+                </div>
+            `;
+        } else {
+            addOrRemoveHtml = `
+                <div 
+                    class="movie-remove-from-watchlist"
+                    data-movieid="${movie.id}"
+                >
+                    <img
+                        src="icons/minus.svg"
+                        alt="minus icon"
+                        class="minus-icon"
+                    />
+                    <p class="movie-remove-btn">Watchlist</p>
+                </div>
+            `;
+        }
+
+        moviesHmtl += `
+            <div class="movie-card">
+                <div class="movie-img">
+                    <img
+                        src="${movie.poster}"
+                        alt="${movie.title} cover poster"
+                    />
+                </div>
+                <div class="movie-info">
+                    <div class="movie-info-header">
+                        <p class="movie-title">${movie.title}</p>
+                        <p class="movie-rating">⭐ ${movie.rating}</p>
+                    </div>
+                    <div class="movie-info-stats">
+                        <div class="movie-properties">
+                            <p class="movie-duration">${movie.runtime}</p>
+                            <p class="movie-tags">
+                                ${movie.genre}
+                            </p>
+                            
+                            ${addOrRemoveHtml}
+                        </div>
+                        
+                        ${truncateMoviesSynopsis(movie.plot)}
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    moviesList.innerHTML = moviesHmtl;
+}
 
 // {
 //     "Title":"Blade Runner",

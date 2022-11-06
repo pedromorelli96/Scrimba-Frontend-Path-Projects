@@ -246,6 +246,16 @@ img {
     margin-right: 0.5em;
 }
 
+.movie-title {
+    width: 85%;
+}
+
+.movie-rating {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+}
+
 .movie-duration,
 .movie-tags {
     margin-right: 1.5em;
@@ -257,6 +267,14 @@ img {
     display: flex;
     align-items: center;
     transition: all 0.2s ease-in-out;
+}
+
+.movie-duration {
+    width: 15%;
+}
+
+.movie-tags {
+    width: 50%;
 }
 
 .movie-add-to-watchlist {
