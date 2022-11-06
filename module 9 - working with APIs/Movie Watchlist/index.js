@@ -7,14 +7,6 @@ const emptyMovies = document.getElementById("empty-movies");
 const emptySearch = document.getElementById("empty-search");
 const moviesSynopsis = document.querySelectorAll(".movie-synopsis");
 
-document.addEventListener("submit", function (e) {
-    e.preventDefault();
-    moviesObjectArray = [];
-    emptyMovies.classList.add("hidden");
-    emptySearch.classList.add("hidden");
-    getMovieInfo(getMovieIds(searchInput.value));
-});
-
 function truncateMoviesSynopsis(synopsis) {
     if (synopsis.length > 150) {
         let truncated = synopsis.substring(0, 150);
@@ -106,30 +98,36 @@ function renderMovieList() {
     moviesObjectArray.forEach((movie) => {
         if (!movie.inWatchlist) {
             addOrRemoveHtml = `
-                <div 
-                    class="movie-add-to-watchlist"
-                    data-movieid="${movie.id}"
-                >
+                <div class="movie-add-to-watchlist" data-movieid="${movie.id}">
                     <img
                         src="icons/plus.svg"
                         alt="plus icon"
                         class="plus-icon"
+                        data-movieid="${movie.id}"
                     />
-                    <p class="movie-add-btn">Watchlist</p>
+                    <p 
+                        class="movie-add-btn"
+                        data-movieid="${movie.id}"
+                    >
+                        Watchlist
+                    </p>
                 </div>
             `;
         } else {
             addOrRemoveHtml = `
-                <div 
-                    class="movie-remove-from-watchlist"
-                    data-movieid="${movie.id}"
-                >
+                <div class="movie-remove-from-watchlist" data-movieid="${movie.id}">
                     <img
                         src="icons/minus.svg"
                         alt="minus icon"
                         class="minus-icon"
+                        data-movieid="${movie.id}"
                     />
-                    <p class="movie-remove-btn">Watchlist</p>
+                    <p 
+                        class="movie-remove-btn"
+                        data-movieid="${movie.id}"
+                    >
+                        Watchlist
+                    </p>
                 </div>
             `;
         }
@@ -167,43 +165,26 @@ function renderMovieList() {
     moviesList.innerHTML = moviesHmtl;
 }
 
-// {
-//     "Title":"Blade Runner",
-//     "Year":"1982",
-//     "Rated":"R",
-//     "Released":"25 Jun 1982",
-//     "Runtime":"117 min",
-//     "Genre":"Action, Drama, Sci-Fi",
-//     "Director":"Ridley Scott",
-//     "Writer":"Hampton Fancher, David Webb Peoples, Philip K. Dick",
-//     "Actors":"Harrison Ford, Rutger Hauer, Sean Young",
-//     "Plot":"A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.",
-//     "Language":"English, German, Cantonese, Japanese, Hungarian, Arabic, Korean",
-//     "Country":"United States",
-//     "Awards":"Nominated for 2 Oscars. 12 wins & 19 nominations total",
-//     "Poster":"https://m.media-amazon.com/images/M/MV5BNzQzMzJhZTEtOWM4NS00MTdhLTg0YjgtMjM4MDRkZjUwZDBlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
-//     "Ratings":[
-//        {
-//           "Source":"Internet Movie Database",
-//           "Value":"8.1/10"
-//        },
-//        {
-//           "Source":"Rotten Tomatoes",
-//           "Value":"89%"
-//        },
-//        {
-//           "Source":"Metacritic",
-//           "Value":"84/100"
-//        }
-//     ],
-//     "Metascore":"84",
-//     "imdbRating":"8.1",
-//     "imdbVotes":"762,768",
-//     "imdbID":"tt0083658",
-//     "Type":"movie",
-//     "DVD":"30 Oct 2001",
-//     "BoxOffice":"$32,914,489",
-//     "Production":"N/A",
-//     "Website":"N/A",
-//     "Response":"True"
-//  }
+document.addEventListener("submit", function (e) {
+    e.preventDefault();
+    moviesObjectArray = [];
+    emptyMovies.classList.add("hidden");
+    emptySearch.classList.add("hidden");
+    getMovieInfo(getMovieIds(searchInput.value));
+});
+
+moviesList.addEventListener("click", function (e) {
+    if (e.target.dataset.movieid) {
+        const index = moviesObjectArray.findIndex(
+            (movie) => movie.id === e.target.dataset.movieid
+        );
+
+        moviesObjectArray[index].inWatchlist =
+            !moviesObjectArray[index].inWatchlist;
+
+        // add confirmation toast here
+        // https://www.w3schools.com/howto/howto_js_snackbar.asp
+
+        renderMovieList();
+    }
+});

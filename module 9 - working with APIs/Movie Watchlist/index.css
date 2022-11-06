@@ -65,7 +65,8 @@ img {
 .movie-rating,
 .movie-duration,
 .movie-tags,
-.movie-add-to-watchlist {
+.movie-add-to-watchlist,
+.movie-remove-from-watchlist {
     font-weight: 400;
     font-size: 0.75rem;
 }
@@ -242,7 +243,8 @@ img {
 }
 
 .movie-title,
-.plus-icon {
+.plus-icon,
+.minus-icon {
     margin-right: 0.5em;
 }
 
@@ -263,7 +265,8 @@ img {
 
 .movie-info-header,
 .movie-properties,
-.movie-add-to-watchlist {
+.movie-add-to-watchlist,
+.movie-remove-from-watchlist {
     display: flex;
     align-items: center;
     transition: all 0.2s ease-in-out;
@@ -277,11 +280,13 @@ img {
     width: 50%;
 }
 
-.movie-add-to-watchlist {
+.movie-add-to-watchlist,
+.movie-remove-from-watchlist {
     width: min-content;
 }
 
-.movie-add-to-watchlist:hover {
+.movie-add-to-watchlist:hover,
+.movie-remove-from-watchlist:hover {
     cursor: pointer;
     text-decoration: underline;
     transform: scale(1.1);
@@ -293,7 +298,14 @@ img {
         brightness(120%) contrast(125%);
 }
 
-.movie-add-to-watchlist > img {
+.movie-remove-from-watchlist:hover > img {
+    transition: filter 100ms linear;
+    filter: invert(26%) sepia(96%) saturate(6244%) hue-rotate(355deg)
+        brightness(100%) contrast(121%);
+}
+
+.movie-add-to-watchlist > img,
+.movie-remove-from-watchlist > img {
     width: 25%;
 }
 
