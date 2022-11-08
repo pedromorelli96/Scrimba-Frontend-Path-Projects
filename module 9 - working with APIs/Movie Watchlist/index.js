@@ -1,5 +1,8 @@
 const apiKey = "202089d";
 let moviesObjectArray = [];
+let watchlist = [];
+const watchlistFromLocalStorage = JSON.parse(localStorage.getItem("watchlist"));
+console.log("firstLoad watchlistFromLocalStorage: ", watchlistFromLocalStorage);
 
 const searchInput = document.getElementById("search-input");
 const moviesList = document.getElementById("movies-list");
@@ -28,6 +31,13 @@ function truncateMoviesSynopsis(synopsis) {
 }
 
 function createMovieObject(id, movie) {
+    let watchlistFlag = false;
+
+    if (watchlistFromLocalStorage) {
+        const found = watchlist.some((movie) => movie.id === id);
+        if (found) watchlistFlag = true;
+    }
+
     moviesObjectArray.push({
         id: id,
         title: movie.Title,
@@ -36,7 +46,7 @@ function createMovieObject(id, movie) {
         genre: movie.Genre,
         plot: movie.Plot,
         poster: movie.Poster,
-        inWatchlist: false,
+        inWatchlist: watchlistFlag,
     });
 }
 
@@ -165,6 +175,10 @@ function renderMovieList() {
     moviesList.innerHTML = moviesHmtl;
 }
 
+if (watchlistFromLocalStorage) {
+    watchlist = watchlistFromLocalStorage;
+}
+
 document.addEventListener("submit", function (e) {
     e.preventDefault();
     moviesObjectArray = [];
@@ -181,6 +195,10 @@ moviesList.addEventListener("click", function (e) {
 
         moviesObjectArray[index].inWatchlist =
             !moviesObjectArray[index].inWatchlist;
+
+        watchlist.push(moviesObjectArray[index]);
+
+        localStorage.setItem("watchlist", JSON.stringify(watchlist));
 
         // add confirmation toast here
         // https://www.w3schools.com/howto/howto_js_snackbar.asp
