@@ -21,95 +21,48 @@
         <div id="container">
             <header id="header">
                 <div class="header-text">
-                    <h1>Find your film</h1>
-                    <p id="watchlist-nav">Search for Movies</p>
+                    <h1>My Watchlist</h1>
+                    <a href="index.html" id="index-header-nav"
+                        >Search for movies</a
+                    >
                 </div>
             </header>
-            <div id="search-bar">
-                <form>
-                    <div class="form-contents">
-                        <img src="icons/search.svg" alt="search icon" />
-                        <input
-                            type="text"
-                            id="search-input"
-                            placeholder="Blade Runner"
-                        />
-                        <button type="submit">Search</button>
-                    </div>
-                </form>
-            </div>
             <main id="main">
-                <div class="empty-movies">
-                    <img src="icons/movie.svg" alt="movie icon" />
-                    <p class="empty-movies-text">Start exploring</p>
-                </div>
-                <div class="movies-list">
-                    <div class="movie-card">
-                        <div class="movie-img">
-                            <img
-                                src="images/image 33.png"
-                                alt="movie cover image"
-                            />
-                        </div>
-                        <div class="movie-info">
-                            <div class="movie-info-header">
-                                <p class="movie-title">Blade Runner</p>
-                                <p class="movie-rating">⭐ 8.1</p>
-                            </div>
-                            <div class="movie-info-stats">
-                                <p class="movie-duration">116 min</p>
-                                <p class="movie-tags">Drama, Mystery, Sci-fi</p>
-                                <div class="movie-remove-from-watchlist">
-                                    <img
-                                        src="icons/minus.svg"
-                                        alt="minus icon"
-                                    />
-                                    <p id="movie-remove-btn">Remove</p>
-                                </div>
-                                <p class="movie-synopsis">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Beatae ea deserunt commodi
-                                    recusandae. Necessitatibus illum ratione
-                                    quae labore non incidunt.
-                                </p>
-                            </div>
-                        </div>
+                <div class="empty-movies inner-content" id="empty-movies">
+                    <p class="empty-watchlist-text">
+                        Your watchlist is looking a little empty...
+                    </p>
+                    <div class="empty-watchlist-nav" data-indexnav="index">
+                        <img
+                            src="icons/plus.svg"
+                            alt="plus icon"
+                            class="plus-icon"
+                            data-indexnav="index"
+                        />
+                        <a
+                            href="index.html"
+                            id="index-empty-nav"
+                            data-indexnav="index"
+                        >
+                            Let’s add some movies!
+                        </a>
                     </div>
+                </div>
 
-                    <div class="movie-card">
-                        <div class="movie-img">
-                            <img
-                                src="images/image 34.png"
-                                alt="movie cover image"
-                            />
-                        </div>
-                        <div class="movie-info">
-                            <div class="movie-info-header">
-                                <p class="movie-title">Blade Runner 2049</p>
-                                <p class="movie-rating">⭐ 8.0</p>
-                            </div>
-                            <div class="movie-info-stats">
-                                <p class="movie-duration">164 min</p>
-                                <p class="movie-tags">Action, Drama, Mystery</p>
-                                <div class="movie-remove-from-watchlist">
-                                    <img
-                                        src="icons/minus.svg"
-                                        alt="minus icon"
-                                    />
-                                    <p id="movie-remove-btn">Remove</p>
-                                </div>
-                                <p class="movie-synopsis">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Beatae ea deserunt commodi
-                                    recusandae. Necessitatibus illum ratione
-                                    quae labore non incidunt.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="empty-search hidden" id="empty-search">
+                    <p class="empty-search-text">
+                        Unable to find what you’re looking for. Please try
+                        another search.
+                    </p>
                 </div>
+
+                <div
+                    class="movies-list inner-content hidden"
+                    id="movies-list"
+                ></div>
             </main>
         </div>
+        <div id="toast"></div>
         <script src="index.js" type="module"></script>
     </body>
 </html>

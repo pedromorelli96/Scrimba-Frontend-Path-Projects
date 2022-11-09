@@ -57,6 +57,12 @@ img {
     font-size: 1.125rem;
 }
 
+.empty-watchlist-text {
+    color: #787878;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
 .movie-title {
     font-weight: 500;
     font-size: 1.125rem;
