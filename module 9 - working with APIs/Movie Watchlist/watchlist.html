@@ -20,7 +20,7 @@
     <body>
         <div id="container">
             <header id="header">
-                <div class="header-text">
+                <div class="header-text inner-content">
                     <h1>My Watchlist</h1>
                     <a href="index.html" id="index-header-nav"
                         >Search for movies</a
@@ -28,32 +28,28 @@
                 </div>
             </header>
             <main id="main">
-                <div class="empty-movies inner-content" id="empty-movies">
+                <div
+                    class="empty-movies inner-content hidden"
+                    id="empty-movies"
+                >
                     <p class="empty-watchlist-text">
                         Your watchlist is looking a little empty...
                     </p>
                     <div class="empty-watchlist-nav" data-indexnav="index">
-                        <img
-                            src="icons/plus.svg"
-                            alt="plus icon"
-                            class="plus-icon"
-                            data-indexnav="index"
-                        />
                         <a
                             href="index.html"
                             id="index-empty-nav"
                             data-indexnav="index"
                         >
-                            Let’s add some movies!
+                            <img
+                                src="icons/plus.svg"
+                                alt="plus icon"
+                                class="plus-icon"
+                                data-indexnav="index"
+                            />
+                            <p>Let’s add some movies!</p>
                         </a>
                     </div>
-                </div>
-
-                <div class="empty-search hidden" id="empty-search">
-                    <p class="empty-search-text">
-                        Unable to find what you’re looking for. Please try
-                        another search.
-                    </p>
                 </div>
 
                 <div
@@ -63,6 +59,6 @@
             </main>
         </div>
         <div id="toast"></div>
-        <script src="index.js" type="module"></script>
+        <script src="watchlist.js" type="module"></script>
     </body>
 </html>

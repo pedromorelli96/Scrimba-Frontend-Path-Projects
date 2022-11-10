@@ -99,6 +99,20 @@ img {
     cursor: pointer;
 }
 
+#index-empty-nav {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+#index-empty-nav:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    /* transform: scale(1.1);
+    transition: 100ms linear; */
+}
+
 /* ===============
     Layout
 ================== */
@@ -313,6 +327,14 @@ img {
 .movie-add-to-watchlist > img,
 .movie-remove-from-watchlist > img {
     width: 25%;
+}
+
+.empty-watchlist-nav * {
+    display: flex;
+}
+
+.empty-watchlist-nav img {
+    width: 7.5%;
 }
 
 /* ===============
