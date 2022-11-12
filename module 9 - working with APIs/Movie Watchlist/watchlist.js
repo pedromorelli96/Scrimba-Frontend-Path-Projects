@@ -1,16 +1,37 @@
-// NEED TO REVIEW EVERYTHING IN THIS FILE
-
-const apiKey = "202089d";
 let moviesObjectArray = [];
 let watchlist = [];
 const watchlistFromLocalStorage = JSON.parse(localStorage.getItem("watchlist"));
-
-const searchInput = document.getElementById("search-input");
-const moviesList = document.getElementById("movies-list");
 const emptyMovies = document.getElementById("empty-movies");
-const emptySearch = document.getElementById("empty-search");
+const moviesList = document.getElementById("movies-list");
 const moviesSynopsis = document.querySelectorAll(".movie-synopsis");
 const toast = document.getElementById("toast");
+
+// First run - verify if there is any movie saved at all
+if (watchlistFromLocalStorage) {
+    watchlist = watchlistFromLocalStorage;
+    populateMoviesObjectArray();
+    renderMovieList();
+    toggleMovieList(true);
+} else {
+    emptyMovies.classList.remove("hidden");
+}
+
+function createMovieObject(movie) {
+    moviesObjectArray.push({
+        id: movie.id,
+        title: movie.title,
+        rating: movie.rating,
+        runtime: movie.runtime,
+        genre: movie.genre,
+        plot: movie.plot,
+        poster: movie.poster,
+        inWatchlist: movie.inWatchlist,
+    });
+}
+
+function populateMoviesObjectArray() {
+    watchlist.forEach((movie) => createMovieObject(movie));
+}
 
 function truncateMoviesSynopsis(synopsis) {
     if (synopsis.length > 150) {
@@ -32,29 +53,58 @@ function truncateMoviesSynopsis(synopsis) {
     `;
 }
 
-function createMovieObject(id, movie) {
-    let watchlistFlag = false;
+function renderMovieList() {
+    let moviesHmtl = ``;
 
-    if (watchlistFromLocalStorage) {
-        const found = watchlist.some((movie) => movie.id === id);
-        if (found) watchlistFlag = true;
-    }
-
-    moviesObjectArray.push({
-        id: id,
-        title: movie.Title,
-        rating: movie.imdbRating,
-        runtime: movie.Runtime,
-        genre: movie.Genre,
-        plot: movie.Plot,
-        poster: movie.Poster,
-        inWatchlist: watchlistFlag,
+    moviesObjectArray.forEach((movie) => {
+        if (movie.inWatchlist) {
+            moviesHmtl += `
+                <div class="movie-card">
+                    <div class="movie-img">
+                        <img
+                            src="${movie.poster}"
+                            alt="${movie.title} cover poster"
+                        />
+                    </div>
+                    <div class="movie-info">
+                        <div class="movie-info-header">
+                            <p class="movie-title">${movie.title}</p>
+                            <p class="movie-rating">⭐ ${movie.rating}</p>
+                        </div>
+                        <div class="movie-info-stats">
+                            <div class="movie-properties">
+                                <p class="movie-duration">${movie.runtime}</p>
+                                <p class="movie-tags">
+                                    ${movie.genre}
+                                </p>
+                                
+                                <div class="movie-remove-from-watchlist" data-movieid="${
+                                    movie.id
+                                }">
+                                    <img
+                                        src="icons/minus.svg"
+                                        alt="minus icon"
+                                        class="minus-icon"
+                                        data-movieid="${movie.id}"
+                                    />
+                                    <p 
+                                        class="movie-remove-btn"
+                                        data-movieid="${movie.id}"
+                                    >
+                                        Watchlist
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            ${truncateMoviesSynopsis(movie.plot)}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
     });
-}
 
-function toggleMovieList() {
-    moviesList.classList.add("hidden");
-    emptySearch.classList.remove("hidden");
+    moviesList.innerHTML = moviesHmtl;
 }
 
 function showToast(action, movieTitle) {
@@ -73,8 +123,14 @@ function showToast(action, movieTitle) {
     }, 3000);
 }
 
-if (watchlistFromLocalStorage) {
-    watchlist = watchlistFromLocalStorage;
+function toggleMovieList(showMovies) {
+    if (showMovies) {
+        moviesList.classList.remove("hidden");
+        emptyMovies.classList.add("hidden");
+    } else {
+        moviesList.classList.add("hidden");
+        emptyMovies.classList.remove("hidden");
+    }
 }
 
 moviesList.addEventListener("click", function (e) {
@@ -103,6 +159,7 @@ moviesList.addEventListener("click", function (e) {
         // Update localStorage
         if (watchlist.length === 0) {
             localStorage.clear();
+            toggleMovieList(false);
         } else {
             localStorage.setItem("watchlist", JSON.stringify(watchlist));
         }

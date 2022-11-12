@@ -230,6 +230,10 @@ img {
     padding-top: 3em;
 }
 
+.watchlist {
+    padding-top: 0;
+}
+
 .movie-card {
     display: flex;
     align-items: center;

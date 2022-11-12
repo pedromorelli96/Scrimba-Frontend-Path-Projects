@@ -3,6 +3,10 @@ let moviesObjectArray = [];
 let watchlist = [];
 const watchlistFromLocalStorage = JSON.parse(localStorage.getItem("watchlist"));
 
+if (watchlistFromLocalStorage) {
+    watchlist = watchlistFromLocalStorage;
+}
+
 const searchInput = document.getElementById("search-input");
 const moviesList = document.getElementById("movies-list");
 const emptyMovies = document.getElementById("empty-movies");
@@ -189,10 +193,6 @@ function showToast(action, movieTitle) {
     setTimeout(function () {
         toast.className = toast.className.replace("show", "");
     }, 3000);
-}
-
-if (watchlistFromLocalStorage) {
-    watchlist = watchlistFromLocalStorage;
 }
 
 document.addEventListener("submit", function (e) {
