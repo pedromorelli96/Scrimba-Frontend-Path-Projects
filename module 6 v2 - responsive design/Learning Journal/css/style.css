@@ -1,5 +1,13 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html,
 body {
+    font-family: "Source Sans Pro", sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     margin: 0;
     padding: 0;
 }
