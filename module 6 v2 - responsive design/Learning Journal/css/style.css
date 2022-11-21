@@ -11,3 +11,21 @@ body {
     margin: 0;
     padding: 0;
 }
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =================
+Typography
+================= */
+
+/* =================
+Layout
+================= */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
