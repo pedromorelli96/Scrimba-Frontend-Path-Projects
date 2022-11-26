@@ -20,7 +20,40 @@ img {
 /* =================
 Typography
 ================= */
+.section-one * {
+    text-decoration: none;
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px black;
+}
+
+footer,
+.view-more-text {
+    text-align: center;
+}
 
 /* =================
 Layout
+================= */
+.container {
+    width: 90%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.section-one {
+    background-image: url(../images/article-image-hero.jpg);
+    background-size: cover;
+    background-position-y: 60%;
+}
+
+/* .hero-article {
+    padding: 1em 0;
+}
+
+.section-one-preview {
+    max-width: 600px;
+} */
+
+/* =================
+Media-query
 ================= */
