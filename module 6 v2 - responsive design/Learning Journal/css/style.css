@@ -18,17 +18,78 @@ img {
 }
 
 /* =================
-Typography
+Typography (mobile first)
 ================= */
+.header-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem; /* 14px */
+    color: #0e0e0e;
+}
+
+.nav-item {
+    font-weight: 600;
+    font-size: 0.75rem; /* 12px */
+    text-transform: uppercase;
+    color: #090909;
+}
+
 .section-one * {
     text-decoration: none;
     color: whitesmoke;
     text-shadow: 1px 1px 1px black;
 }
 
-footer,
-.view-more-text {
+.section-one-date {
+    font-size: 0.75rem; /* 12px */
+    text-transform: uppercase;
+}
+
+.section-one-preview {
+    line-height: 1.25;
+}
+
+.sub-article-date {
+    font-size: 0.875rem; /* 14px */
+    text-transform: uppercase;
+}
+
+.sub-article-title {
+    font-weight: 700;
+    font-size: 1.5rem; /* 24px */
+}
+
+.sub-article-preview {
+    line-height: 1.25;
+    color: #505050;
+}
+
+.view-more-text,
+footer {
     text-align: center;
+}
+
+.view-more-text {
+    font-weight: 700;
+    text-transform: capitalize;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+footer {
+    background: #202020;
+    text-transform: capitalize;
+}
+
+.footer-text {
+    font-weight: 700;
+    font-size: 0.75rem; /* 12px */
+    color: #ececec;
+}
+
+.footer-copyright {
+    font-size: 0.75rem; /* 12px */
+    color: #d7d7d7;
 }
 
 /* =================
