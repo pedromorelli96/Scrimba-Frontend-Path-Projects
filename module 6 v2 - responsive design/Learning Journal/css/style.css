@@ -105,13 +105,39 @@ Layout
     background-image: url(../images/article-image-hero.jpg);
     background-size: cover;
     background-position-y: 60%;
+    height: 300px;
+    margin-bottom: 2em;
 }
 
-/* .hero-article {
-    padding: 1em 0;
+.container-hero,
+.hero-article {
+    height: 100%;
+}
+
+.hero-article {
+    position: relative;
+}
+
+.hero-article * {
+    margin: 0;
+}
+
+.hero-article > a {
+    position: absolute;
+    bottom: 0;
+}
+
+.section-one-date,
+.hero-article h1 {
+    margin-bottom: 0.5rem;
 }
 
 .section-one-preview {
+    max-width: 600px;
+    margin-bottom: 1.5em;
+}
+
+/* .section-one-preview {
     max-width: 600px;
 } */
 
