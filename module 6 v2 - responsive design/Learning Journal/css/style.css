@@ -61,7 +61,8 @@ nav a:focus {
 
 .section-one-preview,
 .post-preview,
-.post-section * {
+.post-section *,
+.about-me-preview {
     line-height: 1.25;
 }
 
@@ -117,6 +118,10 @@ footer {
     text-align: center;
     margin-top: 3em;
     margin-bottom: 1.75em;
+}
+
+.about-me-intro h1 {
+    font-size: 2.2rem;
 }
 
 /* =================
@@ -261,7 +266,8 @@ footer * {
     display: none;
 }
 
-.hero-article-post {
+.hero-article-post,
+.about-me-intro {
     margin-top: 2em;
     margin-bottom: 2.5em;
 }
@@ -270,7 +276,8 @@ header .header-content *,
 header nav *,
 .hero-article a *,
 .hero-article-post *,
-.hero-article-image {
+.hero-article-image,
+.about-me-intro * {
     transition: all 0.2s ease-in-out;
 }
 
@@ -289,6 +296,12 @@ header nav *,
 
 .post-topic {
     margin-bottom: 1.5em;
+}
+
+#profile-picture {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
 }
 
 /* =================
@@ -315,8 +328,12 @@ Media-query
     }
 
     .post-topic {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         margin: 0;
+    }
+    
+    .recent-posts-text {
+        font-size: 1.5rem;
     }
 
     .hero-article-post h1 {
@@ -338,6 +355,25 @@ Media-query
 
     .hero-article-image {
         height: 500px;
+    }
+
+    .about-me-intro {
+        display: flex;
+        gap: 2em;
+        align-items: center;
+        margin-top: 5.5em;
+    }
+
+    .about-me-intro * {
+        margin: 0;
+    }
+
+    .about-me-intro h1 {
+        margin-bottom: 0.25em;
+    }
+
+    .about-me-contents {
+        margin-top: 4em;
     }
 }
 
