@@ -11,7 +11,7 @@ BABY BLUE: #CAF0F8
 body {
     margin: 0;
     text-align: center;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
 }
 
 .hero-div {
@@ -19,7 +19,8 @@ body {
     display: flex;
     flex-direction: column;
     background-image: url("images/campinas-hero.jpg");
-    background-size: 100% 100%;
+    background-size: cover;
+    /* background-size: 100% 100%; */
     align-items: center;
     justify-content: center;
     color: white;
@@ -28,14 +29,14 @@ body {
 }
 
 #hero-h1 {
-    background-color: #03045E;
+    background-color: #03045e;
     padding: 5px 15px;
     border-radius: 15px;
     font-size: 40px;
 }
 
 #hero-h2 {
-    background-color: #00B4D8;
+    background-color: #00b4d8;
     width: 600px;
     padding: 5px 30px;
     border-radius: 15px;
@@ -43,10 +44,10 @@ body {
 
 .activities-div {
     height: 500px;
-    background-color: #CAF0F8;
+    background-color: #caf0f8;
     display: flex;
     flex-direction: column;
-    color: #1D3557;
+    color: #1d3557;
 }
 
 #activities-h3 {
@@ -68,7 +69,7 @@ body {
 }
 
 .activity-div:hover {
-    background-color: #0077B6;
+    background-color: #0077b6;
     color: white;
 }
 
@@ -88,13 +89,16 @@ body {
     justify-content: space-around;
     width: 400px;
     height: 300px;
-    align-items: center;    
-    background-color: #90E0EF;
+    align-items: center;
+    background-color: #90e0ef;
     padding: 5px 20px;
     margin: 80px auto 20px;
     border-radius: 10px;
-    border-bottom: 5px solid #03045E;
+    border-bottom: 5px solid #03045e;
+}
 
+.guide-div img {
+    object-fit: cover;
 }
 
 .avatar {
@@ -102,7 +106,6 @@ body {
     height: 250px;
     border-radius: 20px;
 }
-
 
 #guide-text {
     width: 200px;
