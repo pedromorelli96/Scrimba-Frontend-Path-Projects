@@ -1,28 +1,30 @@
 body {
     margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #1F2937;
+    font-family: "Inter", sans-serif;
+    background: #1f2937;
     color: white;
-    max-width: 800px;
+    /* max-width: 800px; */
 }
 
 #container {
-    margin: 115px 50px;
+    margin: 115px auto;
+    padding: 0 20px;
+    max-width: 640px;
 }
 
 h1 {
-    font-family: 'Karla', sans-serif;
+    font-family: "Karla", sans-serif;
     font-weight: 800;
     font-size: 40px;
     line-height: 40px;
 }
 
 .highlight {
-    color: #4ADF86;
+    color: #4adf86;
 }
 
 .sup-text {
-    color: #D5D4D8;
+    color: #d5d4d8;
     font-size: 20px;
     line-height: 28px;
 }
@@ -55,15 +57,15 @@ h1 {
 }
 
 .p-size {
-    color: #D5D4D8;
+    color: #d5d4d8;
     margin-right: 50px;
     font-size: 18px;
 }
 
 #gen-btn {
-    background: #10B981;
+    background: #10b981;
     color: white;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 500;
     line-height: 24px;
     padding: 10px 15px;
@@ -75,11 +77,11 @@ h1 {
 
 #gen-btn:active {
     transform: translateY(3px);
-    box-shadow: 0 2px #064E3B;
+    box-shadow: 0 2px #064e3b;
 }
 
 hr {
-    border: 1px solid #2F3E53;
+    border: 1px solid #2f3e53;
     margin-top: 35px;
 }
 
@@ -98,9 +100,9 @@ hr {
     margin-top: 35px;
     width: 240px;
     word-break: break-all;
-    height: 80px;
+    height: 120px;
     text-align: center;
-    color: #55F991;
+    color: #55f991;
     font-weight: 500;
     line-height: 40px;
     padding: 5px 15px;
