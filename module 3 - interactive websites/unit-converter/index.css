@@ -1,15 +1,15 @@
 body {
     margin: 0 auto;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     text-align: center;
     display: flex;
     flex-direction: column;
-    background: #F4F4F4;
+    background: #f4f4f4;
 }
 
 #action-container {
     color: white;
-    background: #6943FF;
+    background: #6943ff;
     flex: 1 1 auto;
 }
 
@@ -30,7 +30,7 @@ body {
 #number-input {
     color: white;
     background: transparent;
-    border: 2px solid #B295FF;
+    border: 2px solid #b295ff;
     border-radius: 5px;
     width: 120px;
     height: 85px;
@@ -67,7 +67,7 @@ body {
 }
 
 .data-type {
-    color: #5A537B;
+    color: #5a537b;
     font-weight: 600;
     font-size: 20px;
     line-height: 20px;
