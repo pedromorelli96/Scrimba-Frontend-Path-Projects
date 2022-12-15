@@ -1,4 +1,68 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: "Inter", sans-serif;
+    background: #23252c;
 }
+
+/* 
+    Typography
+ */
+.name {
+    font-size: 1.6rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.job-title {
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #f3bf99;
+}
+
+.website-title {
+    font-size: 0.65rem;
+    text-align: center;
+    color: #f5f5f5;
+    letter-spacing: 1px;
+}
+
+.contact-buttons a {
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.email-btn-text {
+    color: #374151;
+}
+
+.linkedin-btn-text {
+    color: #ffffff;
+}
+
+.about-header,
+.interests-header {
+    color: #F5F5F5;
+}
+
+.about-text,
+.interests-text {
+    color: #DCDCDC;
+    font-size: 0.75rem;
+}
+
+.interests-text-hidden {
+    color: #BAF2EF;
+    font-weight: bold;
+}
+
+.interests-text-highlight {
+    font-style: italic;
+    color: #f3bf99;
+}
+
+/* 
+    Layout
+ */
