@@ -5,23 +5,35 @@ import github_icon from "../assets/GitHub Icon.png";
 
 export default function Footer() {
     return (
-        <div className="footer">
-            <img
-                src={twitter_icon}
-                alt="twitter icon"
-                className="twitter-icon"
-            />
-            <img
-                src={facebook_icon}
-                alt="facebook icon"
-                className="facebook-icon"
-            />
-            <img
-                src={instagram_icon}
-                alt="instagram icon"
-                className="instagram-icon"
-            />
-            <img src={github_icon} alt="github icon" className="github-icon" />
+        <div className="footer container">
+            <div className="footer-content smaller-container">
+                <img
+                    src={twitter_icon}
+                    alt="twitter icon"
+                    className="twitter-icon"
+                />
+                <img
+                    src={facebook_icon}
+                    alt="facebook icon"
+                    className="facebook-icon"
+                />
+                <img
+                    src={instagram_icon}
+                    alt="instagram icon"
+                    className="instagram-icon"
+                />
+                <a
+                    href="https://github.com/pedromorelli96"
+                    className="github-link"
+                    target="_blank"
+                >
+                    <img
+                        src={github_icon}
+                        alt="github icon"
+                        className="github-icon"
+                    />
+                </a>
+            </div>
         </div>
     );
 }

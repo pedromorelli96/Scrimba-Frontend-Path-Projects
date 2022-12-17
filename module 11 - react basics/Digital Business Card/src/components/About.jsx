@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <div className="about">
+        <div className="about container">
             <h3 className="about-header">About</h3>
             <p className="about-text">
                 I am a software engineer from Brazil that has graduated from
