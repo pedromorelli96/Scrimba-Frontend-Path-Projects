@@ -8,7 +8,7 @@ export default function Info() {
             <img
                 src={profile_picture}
                 alt="profile picture"
-                className="profile_picute"
+                className="profile_picture"
             />
             <h1 className="name">Pedro Morelli</h1>
             <h4 className="job-title">Frontend Developer</h4>

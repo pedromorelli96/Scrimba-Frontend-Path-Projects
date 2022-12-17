@@ -66,3 +66,9 @@ body {
 /* 
     Layout
  */
+.profile_picture {
+    display: block;
+    width: 320px;
+    margin: 0 auto;
+    border-radius: 10px 10px 0px 0px;
+}
