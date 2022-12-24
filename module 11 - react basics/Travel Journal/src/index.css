@@ -1,10 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
 }
 
 /* 
     Typography
  */
+.header--text {
+    font-weight: 500;
+    color: white;
+    letter-spacing: -0.075em;
+}
+
+.travel-card--location,
+.travel-card--google-maps,
+.travel-card--date,
+.travel-card--description {
+    font-size: 0.64rem;
+}
+
+.travel-card--location,
+.travel-card--title,
+.travel-card--date,
+.travel-card--description {
+    color: #2B283A;
+}
+
+.travel-card--location {
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+}
+
+.travel-card--google-maps {
+    color: #918E9B;
+}
+
+.travel-card--title {
+    font-size: 1.5625rem;
+}
+
+.travel-card--date {
+    font-weight: 700;
+}
 
 /* 
     Layout
  */
+.header {
+    background: #F55A5A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header--icon {
+    margin-right: 0.5em;
+}
+
+.journal {
+    padding: 2.8125em 2.5em;
+}
+
+.travel-card {
+    padding: 18px 0;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.travel-card:not(:last-child) {
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.travel-card--img-container {
+    min-width: 125px;
+    margin-right: 1.2em;
+}
+
+.travel-card--content {
+    align-self: center;
+}
+
+.travel-card--img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.travel-card--content > *,
+.travel-card--location-info > * {
+    margin: 0;
+}
+
+.travel-card--location-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.travel-card--marker {
+    margin-right: 4px;
+}
+
+.travel-card--location {
+    margin-right: 1em;
+}
+
+.travel-card--title {
+    margin-bottom: 0.5em;
+}
+
+.travel-card--date {
+    margin-bottom: 1em;
+}

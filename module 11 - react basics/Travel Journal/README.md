@@ -1,6 +1,6 @@
 # module 11 - React Basics / Travel Journal (SOLO PROJECT)
 
-### Check it out here (deployed on netlify): <to be deployed>
+### Check it out here (deployed on netlify): https://prismatic-tarsier-9d59d9.netlify.app/
 
 <br />
 
