@@ -64,6 +64,8 @@ body {
 
 .journal {
     padding: 2.8125em 2.5em;
+    max-width: 550px;
+    margin: 0 auto;
 }
 
 .travel-card {
