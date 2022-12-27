@@ -39,6 +39,7 @@ main {
     display: grid;
     grid-template: 40px 40px / 1fr 1fr;
     gap: 17px;
+    margin-bottom: 17px;
 }
 
 .form--input {
@@ -56,4 +57,9 @@ main {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+.meme--image {
+    max-width: 100%;
+    border-radius: 3px;
 }
