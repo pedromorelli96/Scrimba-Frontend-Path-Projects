@@ -1,7 +1,7 @@
 export default function App() {
     return (
-        <div className="container">
+        <main className="container">
             <h1>App Component</h1>
-        </div>
+        </main>
     );
 }
