@@ -1,7 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
     height: 100vh;
     font-family: "Inter", sans-serif;
     /* font-family: "Karla", sans-serif; */
+    background-color: #f5f7fb;
+    background: url(./assets/blob-top.png) top right no-repeat,
+                url(./assets/blob-bottom.png) bottom left no-repeat;
+    background-size: 35vw;
+}
+
+/* TYPOGRAPHY */
+.landing-title,
+.landing-description,
+.loading-text {
+    text-align: center;
+    color: #293264;
+}
+
+.landing-title,
+.loading-text {
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.start-quiz-btn {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #F5F7FB;
+    text-align: center;
+}
+
+/* LAYOUT */
+.landing-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-title {
+    margin: 0;
+}
+
+.landing-description {
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+}
+
+.start-quiz-btn {
+    background: #4D5B9E;
+    border: none;
+    border-radius: 15px;
+    padding: 1em 4em;
+    cursor: pointer;
+}
+
+.start-quiz-btn:hover,
+.start-quiz-btn:focus {
+    background: #1e2d7a;
 }
