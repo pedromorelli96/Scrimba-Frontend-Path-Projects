@@ -10,7 +10,7 @@ body {
     /* font-family: "Karla", sans-serif; */
     background-color: #f5f7fb;
     background: url(./assets/blob-top.png) top right no-repeat,
-                url(./assets/blob-bottom.png) bottom left no-repeat;
+        url(./assets/blob-bottom.png) bottom left no-repeat;
     background-size: 35vw;
 }
 
@@ -33,7 +33,7 @@ body {
     font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 1rem;
-    color: #F5F7FB;
+    color: #f5f7fb;
     text-align: center;
 }
 
@@ -44,6 +44,19 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-5%);
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .landing-title {
@@ -56,7 +69,7 @@ body {
 }
 
 .start-quiz-btn {
-    background: #4D5B9E;
+    background: #4d5b9e;
     border: none;
     border-radius: 15px;
     padding: 1em 4em;
