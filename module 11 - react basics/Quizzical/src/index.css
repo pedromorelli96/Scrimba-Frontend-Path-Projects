@@ -29,7 +29,9 @@ body {
     font-size: 2rem;
 }
 
-.start-quiz-btn {
+.start-quiz-btn,
+.check-answers-btn,
+.play-again-btn {
     font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 1rem;
@@ -68,7 +70,9 @@ body {
     margin-bottom: 2em;
 }
 
-.start-quiz-btn {
+.start-quiz-btn,
+.check-answers-btn,
+.play-again-btn {
     background: #4d5b9e;
     border: none;
     border-radius: 15px;
@@ -77,6 +81,10 @@ body {
 }
 
 .start-quiz-btn:hover,
-.start-quiz-btn:focus {
+.start-quiz-btn:focus,
+.check-answers-btn:hover,
+.check-answers-btn:focus,
+.play-again-btn:hover,
+.play-again-btn:focus {
     background: #1e2d7a;
 }
