@@ -9,9 +9,9 @@ export default function Quiz(props) {
         setFinished((prevState) => !prevState);
     }
 
-    function handlePlayAgain() {
+    async function handlePlayAgain() {
+        await props.fetchQuiz();
         setFinished((prevState) => !prevState);
-        props.fetchQuiz()
     }
 
     return (
@@ -25,6 +25,7 @@ export default function Quiz(props) {
                     question={question.question}
                     correct_answer={question.correct_answer}
                     incorrect_answers={question.incorrect_answers}
+                    finished={finished}
                 />
             ))}
 
