@@ -1,42 +1,82 @@
+import { nanoid } from "nanoid";
 import { useState } from "react";
-import Quiz from "./Quiz";
+import { useEffect } from "react";
+import { decode, shuffle } from "./utils";
 
 export default function App() {
-    const [quiz, setQuiz] = useState([]);
-    const [quizAnswers, setQuizAnswers] = useState([]);
-    const [questionAmount, setQuestionAmount] = useState(5);
+    const [newGame, setNewGame] = useState(false);
+    const [quizStarted, setQuizStarted] = useState(false);
+    const [quizEnded, setQuizEnded] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [questionAmount, setQuestionAmount] = useState(5);
+    const [questionsData, setQuestionsData] = useState([]);
 
-    // UPDATE THIS TO BE INSIDE A USEEFFECT!!!
-    const handleFetchQuiz = async () => {
+    useEffect(() => {
         setIsLoading(true);
+        fetch(
+            `https://opentdb.com/api.php?amount=${questionAmount}&type=multiple`
+        )
+            .then((res) => res.json())
+            .then((data) => {
+                // As the promise gets resolved in less than 1 second
+                // I've set this timeout of 1 second so there is less blinking text
+                // when the website is loaded
+                setTimeout(() => {
+                    setIsLoading(false);
+                }, 1000)
+                setQuestionsData(
+                    data.results.map((question) => {
+                        // shuffle function is defined on 'utils.js' file
+                        const shuffled_answers = shuffle([
+                            ...question.incorrect_answers,
+                            question.correct_answer,
+                        ]);
 
-        try {
-            const response = await fetch(
-                `https://opentdb.com/api.php?amount=${questionAmount}&type=multiple`
-            );
-            const data = await response.json();
-            // POSSIBLY CHANGE THE WAY WE STORE THE DATA
-            // CREATE A CUSTOM OBJECT
-            // WITH PROPERTIES LIKE 'ISCORRECT'
-            // INSTEAD OF SETTING A QUIZ, SET THE QUESTIONS
-            setQuiz(data.results);
-            setQuizAnswers(
-                data.results.map((question) => question.correct_answer)
-            );
-            // MAYBE GENERATE ALL THE SCRAMBLED ANSWERS HERE!!!
-
-            console.log(data.results);
-        } catch (error) {
-            console.log("(!) Error: ", error);
-        } finally {
-            setIsLoading(false);
-        }
-    };
+                        return {
+                            key: nanoid(),
+                            id: nanoid(),
+                            category: question.category,
+                            difficulty: question.difficulty,
+                            // decode function is defined on 'utils.js' file
+                            question: decode(question.question).trim(),
+                            correctAnswer: decode(
+                                question.correct_answer
+                            ).trim(),
+                            shuffledAnswers: shuffled_answers,
+                            isCorrect: false,
+                            selectedAnswer: "",
+                        };
+                    })
+                );
+            });
+    }, [newGame]);
 
     return (
         <main>
-            {quiz.length > 0 ? (
+            <div className="landing-container">
+                {isLoading ? (
+                    <>
+                        <h1 className="loading-text">Loading Quizzical...</h1>
+                    </>
+                ) : (
+                    <>
+                        <h1 className="landing-title">Quizzical</h1>
+                        <p className="landing-description">Test your knowledge!</p>
+                        <button
+                            className="start-quiz-btn"
+                            // onClick={handleFetchQuiz}
+                        >
+                            Start quiz
+                        </button>
+                    </>
+                )}
+            </div>
+
+            {/* NEXT STEP
+            FIX THE QUIZ COMPONENT */}
+
+
+            {/* {quiz.length > 0 ? (
                 <Quiz
                     quiz={quiz}
                     quizAnswers={quizAnswers}
@@ -62,7 +102,7 @@ export default function App() {
                         </>
                     )}
                 </div>
-            )}
+            )} */}
         </main>
     );
 }
