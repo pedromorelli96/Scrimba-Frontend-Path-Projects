@@ -16,6 +16,10 @@ export default function App() {
                 `https://opentdb.com/api.php?amount=${questionAmount}&type=multiple`
             );
             const data = await response.json();
+            // POSSIBLY CHANGE THE WAY WE STORE THE DATA
+            // CREATE A CUSTOM OBJECT
+            // WITH PROPERTIES LIKE 'ISCORRECT'
+            // INSTEAD OF SETTING A QUIZ, SET THE QUESTIONS
             setQuiz(data.results);
             setQuizAnswers(
                 data.results.map((question) => question.correct_answer)
