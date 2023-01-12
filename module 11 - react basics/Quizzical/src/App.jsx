@@ -7,6 +7,7 @@ export default function App() {
     const [questionAmount, setQuestionAmount] = useState(5);
     const [isLoading, setIsLoading] = useState(false);
 
+    // UPDATE THIS TO BE INSIDE A USEEFFECT!!!
     const handleFetchQuiz = async () => {
         setIsLoading(true);
 
@@ -19,6 +20,8 @@ export default function App() {
             setQuizAnswers(
                 data.results.map((question) => question.correct_answer)
             );
+            // MAYBE GENERATE ALL THE SCRAMBLED ANSWERS HERE!!!
+
             console.log(data.results);
         } catch (error) {
             console.log("(!) Error: ", error);

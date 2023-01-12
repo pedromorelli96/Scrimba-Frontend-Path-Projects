@@ -29,6 +29,7 @@ export default function Quiz(props) {
                 />
             ))}
 
+            {/* ADD CONDITIONAL && TOTAL TALLY HERE */}
             {!finished ? (
                 <button
                     className="check-answers-btn"
