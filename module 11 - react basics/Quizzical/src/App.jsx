@@ -1,6 +1,7 @@
 import { nanoid } from "nanoid";
 import { useState } from "react";
 import { useEffect } from "react";
+import Quiz from "./Quiz";
 import { decode, shuffle } from "./utils";
 
 export default function App() {
@@ -23,7 +24,7 @@ export default function App() {
                 // when the website is loaded
                 setTimeout(() => {
                     setIsLoading(false);
-                }, 1000)
+                }, 1000);
                 setQuestionsData(
                     data.results.map((question) => {
                         // shuffle function is defined on 'utils.js' file
@@ -51,30 +52,38 @@ export default function App() {
             });
     }, [newGame]);
 
+    function startQuiz() {
+        setQuizStarted(true);
+    }
+
     return (
         <main>
-            <div className="landing-container">
-                {isLoading ? (
-                    <>
-                        <h1 className="loading-text">Loading Quizzical...</h1>
-                    </>
+            {isLoading ? (
+                <div className="landing-container">
+                    <h1 className="loading-text">Loading Quizzical...</h1>
+                </div>
+            ) : (
+                quizStarted ? (
+                    // <Quiz />
+                    <h1>Quiz started!</h1> // UPDATE QUIZ COMPONENT!
+
+                    // REMOVE FOOTER FROM QUIZ COMPONENT!
                 ) : (
-                    <>
+                    <div className="landing-container">
                         <h1 className="landing-title">Quizzical</h1>
                         <p className="landing-description">Test your knowledge!</p>
                         <button
                             className="start-quiz-btn"
-                            // onClick={handleFetchQuiz}
+                            onClick={startQuiz}
                         >
                             Start quiz
                         </button>
-                    </>
-                )}
-            </div>
+                    </div>
+                )
+            )}
 
             {/* NEXT STEP
             FIX THE QUIZ COMPONENT */}
-
 
             {/* {quiz.length > 0 ? (
                 <Quiz
