@@ -1,6 +1,6 @@
 # module 11 - React Basics / Quizzical (SOLO PROJECT)
 
-### Check it out here (deployed on netlify): <to be deployed>
+### Check it out here (deployed on netlify): https://courageous-pie-d034b9.netlify.app/
 
 <br />
 

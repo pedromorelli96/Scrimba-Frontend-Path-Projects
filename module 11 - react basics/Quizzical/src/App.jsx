@@ -11,6 +11,7 @@ export default function App() {
     const [isLoading, setIsLoading] = useState(false);
     const [questionAmount, setQuestionAmount] = useState(5);
     const [questionsData, setQuestionsData] = useState([]);
+    const [score, setScore] = useState(0);
 
     useEffect(() => {
         setIsLoading(true);
@@ -31,7 +32,7 @@ export default function App() {
                         const shuffled_answers = shuffle([
                             ...question.incorrect_answers,
                             question.correct_answer,
-                        ]);
+                        ]).map((answer) => decode(answer));
 
                         return {
                             key: nanoid(),
@@ -56,62 +57,84 @@ export default function App() {
         setQuizStarted(true);
     }
 
+    function playAgain() {
+        setNewGame((prevState) => !prevState);
+        setQuizEnded(false);
+        setScore(0);
+    }
+
+    function checkAnswers() {
+        setQuizEnded(true);
+        countCorrectAnswers();
+    }
+
+    function countCorrectAnswers() {
+        const count = questionsData.filter(
+            (question) => question.isCorrect === true
+        );
+        setScore(count.length);
+    }
+
+    function selectAnswer(event, id) {
+        setQuestionsData((prevQuestions) =>
+            prevQuestions.map((question) => {
+                return question.id === id
+                    ? {
+                          ...question,
+                          selectedAnswer: event.target.textContent,
+                          isCorrect:
+                              event.target.textContent ===
+                              question.correctAnswer
+                                  ? true
+                                  : false,
+                      }
+                    : question;
+            })
+        );
+    }
+
     return (
         <main>
             {isLoading ? (
                 <div className="landing-container">
                     <h1 className="loading-text">Loading Quizzical...</h1>
                 </div>
-            ) : (
-                quizStarted ? (
-                    // <Quiz />
-                    <h1>Quiz started!</h1> // UPDATE QUIZ COMPONENT!
+            ) : quizStarted ? (
+                <section className="quiz questions-container">
+                    <Quiz
+                        questionsData={questionsData}
+                        selectAnswer={selectAnswer}
+                        quizEnded={quizEnded}
+                    />
 
-                    // REMOVE FOOTER FROM QUIZ COMPONENT!
-                ) : (
-                    <div className="landing-container">
-                        <h1 className="landing-title">Quizzical</h1>
-                        <p className="landing-description">Test your knowledge!</p>
+                    <div className="footer">
+                        {quizEnded && (
+                            <p className="score">
+                                You scored {score}/{questionAmount} correct
+                                answers
+                            </p>
+                        )}
                         <button
-                            className="start-quiz-btn"
-                            onClick={startQuiz}
+                            className={
+                                quizEnded
+                                    ? "play-again-btn"
+                                    : "check-answers-btn"
+                            }
+                            onClick={quizEnded ? playAgain : checkAnswers}
                         >
-                            Start quiz
+                            {quizEnded ? "Play again" : "Check answers"}
                         </button>
                     </div>
-                )
-            )}
-
-            {/* NEXT STEP
-            FIX THE QUIZ COMPONENT */}
-
-            {/* {quiz.length > 0 ? (
-                <Quiz
-                    quiz={quiz}
-                    quizAnswers={quizAnswers}
-                    questionAmount={questionAmount}
-                    fetchQuiz={handleFetchQuiz}
-                />
+                </section>
             ) : (
                 <div className="landing-container">
-                    {isLoading ? (
-                        <h1 className="loading-text">Loading your quiz...</h1>
-                    ) : (
-                        <>
-                            <h1 className="landing-title">Quizzical</h1>
-                            <p className="landing-description">
-                                Test your knowledge!
-                            </p>
-                            <button
-                                className="start-quiz-btn"
-                                onClick={handleFetchQuiz}
-                            >
-                                Start quiz
-                            </button>
-                        </>
-                    )}
+                    <h1 className="landing-title">Quizzical</h1>
+                    <p className="landing-description">Test your knowledge!</p>
+                    <button className="start-quiz-btn" onClick={startQuiz}>
+                        Start quiz
+                    </button>
                 </div>
-            )} */}
+            )}
         </main>
     );
 }
