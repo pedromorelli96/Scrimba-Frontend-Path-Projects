@@ -72,7 +72,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: fadeInAnimation ease 1s;
+    animation: fadeInAnimationY ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -84,7 +84,7 @@ body {
     animation-fill-mode: forwards;
 }
 
-@keyframes fadeInAnimation {
+@keyframes fadeInAnimationY {
     0% {
         opacity: 0;
         transform: translateY(-5%);
