@@ -7,7 +7,6 @@ body {
     padding: 0;
     height: 100vh;
     font-family: "Inter", sans-serif;
-    /* font-family: "Karla", sans-serif; */
     background-color: #f5f7fb;
     background: url(./assets/blob-top.svg) top right no-repeat fixed,
         url(./assets/blob-bottom.svg) bottom left no-repeat fixed;
