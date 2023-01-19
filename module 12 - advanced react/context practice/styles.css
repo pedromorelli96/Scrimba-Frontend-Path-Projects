@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 20px;
+    background-color: #333333;
+    color: whitesmoke;
+}
+
+main {
+    padding: 20px;
+}
