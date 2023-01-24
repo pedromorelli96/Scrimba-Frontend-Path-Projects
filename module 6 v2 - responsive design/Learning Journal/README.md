@@ -1,6 +1,6 @@
 # module 6 v2 - responsive design / Learning Journal (SOLO PROJECT)
 
-### Check it out here (deployed on netlify): https://starlit-banoffee-25acdf.netlify.app/
+### Check it out here (deployed on netlify): https://comfy-pixie-dccac7.netlify.app/
 
 <br />
 

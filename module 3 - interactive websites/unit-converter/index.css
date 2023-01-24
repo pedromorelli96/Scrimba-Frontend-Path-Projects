@@ -34,6 +34,7 @@ body {
     border-radius: 5px;
     width: 120px;
     height: 85px;
+    padding: 0 20px;
     margin-top: 30px;
     font-weight: 800;
     font-size: 58px;
@@ -47,6 +48,10 @@ body {
     width: 120px;
     height: 45px;
     margin: 25px 0 35px 0;
+}
+
+#convert-btn:hover {
+    cursor: pointer;
 }
 
 #convert-btn:active {

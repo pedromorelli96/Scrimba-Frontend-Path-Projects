@@ -1,6 +1,6 @@
 # module 9 - working with APIs / Color Scheme Generator (SOLO PROJECT)
 
-### Check it out here (deployed on netlify): https://silly-empanada-e3cb37.netlify.app/
+### Check it out here (deployed on netlify): https://sunny-bavarois-ce301d.netlify.app/
 
 <br />
 

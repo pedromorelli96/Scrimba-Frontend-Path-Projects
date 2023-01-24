@@ -1,6 +1,6 @@
 # module 7 - next-level Javascript / Tindog (SOLO PROJECT)
 
-### Check it out here (deployed on netlify): https://chic-liger-dc119b.netlify.app/
+### Check it out here (deployed on netlify): https://adorable-truffle-1e84c4.netlify.app/
 
 <br />
 

@@ -8,7 +8,6 @@ body {
     padding: 0;
     font-family: "Smythe", cursive;
     font-weight: 400;
-    /* background-color: black; */
 }
 
 /* =======================
@@ -295,9 +294,6 @@ form input {
 }
 
 .rate {
-    /* float: center;
-    height: 46px;
-    padding: 0 10px; */
     display: flex;
     justify-content: center;
     flex-direction: row-reverse;

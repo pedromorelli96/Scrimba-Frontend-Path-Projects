@@ -35,7 +35,7 @@ function renderPost(postItem) {
     postsEl.innerHTML += postItem;
 }
 
-function generatePosts(posts_array) {
+function generatePosts() {
     let postItem = "";
     for (const post of posts) {
         postItem = `

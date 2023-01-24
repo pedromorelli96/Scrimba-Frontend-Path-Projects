@@ -1,6 +1,6 @@
 # module 9 - working with APIs / Movie Watchlist (SOLO PROJECT)
 
-### Check it out here (deployed on netlify): https://benevolent-squirrel-6a99c6.netlify.app/
+### Check it out here (deployed on netlify): https://superb-narwhal-d371f7.netlify.app/
 
 <br />
 

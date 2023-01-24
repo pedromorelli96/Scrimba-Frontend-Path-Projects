@@ -1,6 +1,6 @@
 # module 3 - interactive websites / unit-converter (SOLO PROJECT)
 
-### Check it out here (deployed on netlify): https://cool-moonbeam-708e1a.netlify.app/
+### Check it out here (deployed on netlify): https://sparkling-croissant-454ec8.netlify.app/
 
 <br />
 

@@ -1,6 +1,6 @@
 # module 5 v2 - essential Javascript / Resturant Ordering App (SOLO PROJECT)
 
-### Check it out here (deployed on netlify): https://inspiring-starburst-c60f14.netlify.app/
+### Check it out here (deployed on netlify): https://darling-pony-d37d39.netlify.app/
 
 <br />
 

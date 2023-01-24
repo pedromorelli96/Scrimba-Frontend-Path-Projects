@@ -7,7 +7,6 @@
 html,
 body {
     font-family: "Source Sans Pro", sans-serif;
-    /* font-family: 'Roboto', sans-serif; */
     margin: 0;
     padding: 0;
     color: #151515;
@@ -331,7 +330,7 @@ Media-query
         font-size: 1.25rem;
         margin: 0;
     }
-    
+
     .recent-posts-text {
         font-size: 1.5rem;
     }
