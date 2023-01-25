@@ -1,6 +1,6 @@
 # module 11 - React Basics / Digital Business Card (SOLO PROJECT)
 
-### Check it out here (deployed on netlify): https://ephemeral-boba-9ef12b.netlify.app/
+### Check it out here (deployed on netlify): https://cosmic-sunflower-6daacb.netlify.app/
 
 <br />
 
