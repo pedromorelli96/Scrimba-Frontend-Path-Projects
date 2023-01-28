@@ -23,7 +23,7 @@ A set of unique values that either evaluate to `true` (*truthy*) or `false` (*fa
     - the variable declaration is *hoisted* and has an `undefined` value.
     ```js
         if (false) {
-            var firstNameVar= 'Dylan';
+            var firstNameVar = 'Dylan';
         }
 
         console.log(firstNameVar); // undefined
@@ -32,7 +32,7 @@ A set of unique values that either evaluate to `true` (*truthy*) or `false` (*fa
     - the variable declaration only exists inside the curly braces.
     ```js
         if (false) {
-            let firstNameLet= 'Dylan';
+            let firstNameLet = 'Dylan';
         }
 
         console.log(firstNameLet); // Error! firstNameLet is not defined
@@ -50,4 +50,8 @@ A set of unique values that either evaluate to `true` (*truthy*) or `false` (*fa
 
 - `===` (*triple equals*) compares **both** the `type` and the `value`.
 
-*Note*: generally speaking, it is better to *always* use `===` (*triple equals*).
+    - *Note*: generally speaking, it is better to *always* use `===` (*triple equals*).
+
+<br>
+
+## 🔰 `map()` vs `filter()` vs `reduce()`
