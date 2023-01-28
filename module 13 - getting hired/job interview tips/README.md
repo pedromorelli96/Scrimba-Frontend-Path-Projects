@@ -86,33 +86,33 @@ A set of unique values that either evaluate to `true` (_truthy_) or `false` (_fa
 
 -   `reduce()` executes a _reducer_ function for each array element and returns a **single value**.
 
-        ```js
-        const nums = [1, 2, 3, 4, 5];
+    ```js
+    const nums = [1, 2, 3, 4, 5];
 
-        const numsAddOneEvens = nums.reduce((acc, current) => {
-            current = current + 1;
+    const numsAddOneEvens = nums.reduce((acc, current) => {
+        current = current + 1;
 
-            if (current % 2 === 0) {
-                acc.push(current);
-            }
+        if (current % 2 === 0) {
+            acc.push(current);
+        }
 
-            return acc;
-        }, []);
+        return acc;
+    }, []);
 
-        console.log(numsAddOneEvens); // [2, 4, 6]
-        ```
+    console.log(numsAddOneEvens); // [2, 4, 6]
+    ```
 
-        ```js
-        const array1 = [1, 2, 3, 4, 5];
+    ```js
+    const array1 = [1, 2, 3, 4, 5];
 
-        const initialValue = 0;
-        const sumWithInitial = array1.reduce(
-            (accumulator, currentValue) => accumulator + currentValue,
-            initialValue
-        );
+    const initialValue = 0;
+    const sumWithInitial = array1.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        initialValue
+    );
 
-        console.log(sumWithInitial); // 15
-        ```
+    console.log(sumWithInitial); // 15
+    ```
 
     <br>
 
