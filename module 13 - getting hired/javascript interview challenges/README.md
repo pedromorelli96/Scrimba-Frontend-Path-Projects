@@ -123,3 +123,11 @@
 #### 📚 Key Concepts
 
 - `max value tracking`
+
+### [Totally Private Data Farm](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Totally%20Private%20Data%20Farm/README.md)
+
+#### 📚 Key Concepts
+
+- `Date()`
+- `.toDateString()`
+- `.map()`
