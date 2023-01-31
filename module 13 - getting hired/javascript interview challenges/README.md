@@ -122,12 +122,123 @@
 
 #### 📚 Key Concepts
 
-- `max value tracking`
+-   `max value tracking`
 
 ### [Totally Private Data Farm](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Totally%20Private%20Data%20Farm/README.md)
 
 #### 📚 Key Concepts
 
-- `Date()`
-- `.toDateString()`
-- `.map()`
+-   `Date()`
+-   `.toDateString()`
+-   `.map()`
+
+### [Find Free Podcasts](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Find%20Free%20Podcasts/README.md)
+
+#### 📚 Key Concepts
+
+-   `.filter()`
+-   `.map()`
+
+### [Candy Sale](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Candy%20Sale/README.md)
+
+#### 📚 Key Concepts
+
+-   `.filter()`
+-   `.map()`
+-   `object shorthand property names`
+
+### [Shopping Cart](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Shopping%20Cart/README.md)
+
+#### 📚 Key Concepts
+
+-   `.reduce()`
+-   `.toFixed()`
+
+### [Total Savory Items](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Total%20Savory%20Items/README.md)
+
+#### 📚 Key Concepts
+
+-   `.reduce()`
+
+### [Holiday Gift Shopping](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Holiday%20Gift%20Shopping/README.md)
+
+#### 📚 Key Concepts
+
+-   `.sort()`
+-   `.forEach()`
+
+### [Unique Genre Tags](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Unique%20Genre%20Tags/README.md)
+
+#### 📚 Key Concepts
+
+-   `.filter()`
+-   `unique values lookup object`
+
+### [Welcome Aboard Scrimba Airlines](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Welcome%20Aboard%20Scrimba%20Airlines/README.md)
+
+#### 📚 Key Concepts
+
+-   `.sort()`
+-   `.forEach()`
+
+### [Popularity Contest](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Popularity%20Contest/README.md)
+
+#### 📚 Key Concepts
+
+-   `.reduce()`
+
+### [Night at Scrimbies](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Night%20at%20Scrimbies/README.md)
+
+#### 📚 Key Concepts
+
+-   `.reduce()`
+-   `.concat()`
+-   `... spread operator`
+-   `.map()`
+-   `Math.floor()`
+-   `Math.random()`
+
+### [Save the Weekend](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Save%20the%20Weekend/README.md)
+
+#### 📚 Key Concepts
+
+-   `.map()`
+-   `object destructuring`
+-   `... spread operator`
+
+### [Find Anagrams in an Array](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Find%20Anagrams%20in%20an%20Array/README.md)
+
+#### 📚 Key Concepts
+
+-   `.toLowerCase()`
+-   `.split()`
+-   `.sort()`
+-   `.join()`
+-   `.trim()`
+-   `.filter()`
+
+### [Emoji Flower Bed](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Emoji%20Flower%20Bed/README.md)
+
+#### 📚 Key Concepts
+
+-   `document.querySelector()`
+-   `.filter()`
+-   `fetch()`
+-   `.then()`
+-   `.catch()`
+-   `.json()`
+-   `.forEach()`
+
+### [Emoji Slot Machine](/module%2013%20-%20getting%20hired/javascript%20interview%20challenges/Emoji%20Slot%20Machine/README.md)
+
+#### 📚 Key Concepts
+
+-   `document.querySelector()`
+-   `.filter()`
+-   `Math.floor()`
+-   `Math.random()`
+-   `fetch()`
+-   `.then()`
+-   `.catch()`
+-   `.json()`
+-   `.forEach()`
